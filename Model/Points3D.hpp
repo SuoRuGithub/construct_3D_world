@@ -9,6 +9,29 @@
 #define _POINTS3D_HPP
 
 #include<vector>
+#include<stdexcept>
+#include<memory>
+
+using PointPtr = std::shared_ptr<Points3D>;
+
+/********异常类**********
+ * 声明了可能用到的异常，包括出现重复点、给定的坐标不是三维的
+ ***********************/
+
+class ExceptionPointExist : public std::invalid_argument{
+public:
+    ExceptionPointExist();
+};
+
+class ExceptionInvalidCoordinates : public std::invalid_argument{
+public:
+    ExceptionInvalidCoordinates();
+};
+
+class ExceptionIndexOutOfRange : public std::invalid_argument{
+public:
+    ExceptionIndexOutOfRange();
+};
 
 /******************************************
  *【类名】              Points3D
@@ -21,19 +44,20 @@
  *【更改记录】          无
  * ***************************************/
 
+// 此处我额外要求点不得重复
+
 class Points3D{
 public:
-    // 构造函数
-    // 此处我额外要求点不得重复
+    /* 构造函数 */
     // * 带默认参数的构造函数，分别给定x, y, z坐标，构造对象
     Points3D(double x = 0.0, double y = 0.0, double z = 0.0);
-    // * 不带默认参数的拷贝构造函数，给定一个长度为3的double型vector，
-    //   构造一个点对象
+    // * 不带默认参数的拷贝构造函数，给定一个长度为3的double型vector，构造一个点对象
     Points3D(const std::vector<double>& coordinates);
     // * 为避免出现重复点，拷贝构造函数和赋值运算符重载删去
-    Points3D(const Points3d& APoint) = delete;
+    Points3D(const Points3D& APoint) = delete;
     Points3D& operator=(const Points3D& aPoint) = delete;
-    // * 析构函数
+
+    /* 析构函数 */
     ~Points3D();
 
     /* non-static setter*/
@@ -41,25 +65,43 @@ public:
     void SetCoordinates(double x, double y, double z);
     
     /* non-static getter*/
-    // 当前点坐标，当前点序号以及所有点列表的常引用，只读
+    // 重载下标访问运算符，用于访问点对象的坐标
+    double operator[](int idx) const;
+
+    // 当前点的坐标的常引用
     const std::vector<double>&            coordinates     {m_coordinates};
+    // 当前点的索引的常引用
     const int&                            idx             {m_idx};
-    const static std::vector<Points3D>    PointsList      {m_PointsList};
+    // 所有点的列表的常引用         * NOTE: 请注意静态成员的初始化要在定义中完成，不可以在这里绑定
+    static const std::vector<PointPtr>&   PointsList;
+
     // 计算这一点到那一点之间的距离
     double Distance(const Points3D& APoint);
+    // 给定一个坐标，判断是否已经存在了由这个坐标确定的点。该函数用于避免在构造对象或者修改对象时出现点重复的情况
+    static bool IsPointExist(const double& x, const double& y, const double& z, const double& precision = 1e-5);
+
+
+    // 给定一个索引，判断这个索引是否越界
+    static bool IsIdxInRange(int idx);
+
+    // 给定三个点的指针，判断这三个点是否共线
+    static bool IsCollinear(PointPtr ptrPointA, PointPtr ptrPointB, PointPtr ptrPointC);
+
+
 
     /* static getters*/
     // 统计当前点的总数目
-    static int PointsCounter() const;
+    static int PointsCounter();
+    // 计算两个点之间的距离
+    static double Distance(Points3D PointA, Points3D PointB);
 
-protected:
 private:
     // 当前点坐标
-    std::vector<double> m_coordinates(3)  {0.0, 0.0, 0.0};
+    std::vector<double> m_coordinates = std::vector<double>(3, 0.0);
     // 当前点序号. 本质为m_PointsList中该点的索引加一（indexing from 1）
     int m_idx {0};
     // 包含当前所有点的引用的列表，符合Zero原则，设置为静态成员
-    static std::vector<Points3D&> m_PointsList;
-}
+    static std::vector<PointPtr> m_PointsList;
+};
 
 #endif
