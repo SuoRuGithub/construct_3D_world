@@ -35,7 +35,8 @@ public:
     // 析构函数
     ~Line3D();
 
-
+    bool operator==(const Line3D& ALine)const;
+    
     /* non-static getters */
 
     // 计算线段的面积（直接返回0）

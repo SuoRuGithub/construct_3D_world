@@ -36,7 +36,7 @@ public:
     ~Point3D();
 
     // 重载 == 运算符，用来比较点是否相等
-    bool operator==(const Point3D& APoint);
+    bool operator==(const Point3D& APoint) const;
 
     /* non-static setter*/
     // 修改坐标

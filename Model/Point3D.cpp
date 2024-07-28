@@ -22,7 +22,7 @@ Point3D::~Point3D(){
 }
 
 // 重载 == 运算符，比较两个点是否相等
-bool Point3D::operator==(const Point3D& APoint){
+bool Point3D::operator==(const Point3D& APoint) const{
     if (std::abs(m_x - APoint.x) < 1e-5 && 
         std::abs(m_y - APoint.y) < 1e-5 && 
         std::abs(m_z - APoint.z) < 1e-5 ){

@@ -20,6 +20,21 @@ Face3D::Face3D(Point3D& PointA, Point3D& PointB, Point3D& PointC)
 Face3D::~Face3D(){
 }
 
+// 重载 == 运算符 （注：在这里我们不考虑PointA / B / C的排序）
+bool Face3D::operator==(const Face3D& AFace){
+    if ((PointA == AFace.PointA && PointB == AFace.PointB && AFace.PointC) ||
+        (PointA == AFace.PointA && PointB == AFace.PointC && AFace.PointB) ||
+        (PointA == AFace.PointB && PointB == AFace.PointA && AFace.PointC) ||
+        (PointA == AFace.PointB && PointB == AFace.PointC && AFace.PointA) ||
+        (PointA == AFace.PointC && PointB == AFace.PointA && AFace.PointB) ||
+        (PointA == AFace.PointC && PointB == AFace.PointB && AFace.PointA)){
+
+        return true;
+    }
+    else{
+        return false;
+    }
+}
 
 /* non-static getters */
 
@@ -73,14 +88,24 @@ void Face3D::SetPoint(PointPtr ptrPoint, double x, double y, double z){
 
 // 给定点的索引进行修改（1，2，3分别代表ABC）
 void Face3D::SetPoint(int PointIdx, double x, double y, double z){
+    Point3D point(x, y, z);
     switch (PointIdx){
         case 1:
+            if (point == PointB || point == PointC){
+                throw ExceptionPointsRepeated();
+            }
             m_PointA.SetCoordinates(x, y, z);
             break;
         case 2:
+            if (point == PointA || point == PointC){
+                throw ExceptionPointsRepeated();
+            }
             m_PointB.SetCoordinates(x, y, z);
             break;
         case 3:
+            if (point == PointA || point == PointB){
+                throw ExceptionPointsRepeated();
+            }
             m_PointC.SetCoordinates(x, y, z);
             break;
         default:

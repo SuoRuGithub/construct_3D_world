@@ -26,6 +26,8 @@ public:
     // 析构函数
     ~Face3D();
 
+    // 重载 == 运算符 （注：在这里我们不考虑PointA / B / C的排序）
+    bool operator==(const Face3D& AFace);
 
     /* non-static getters */
 

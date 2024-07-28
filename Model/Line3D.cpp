@@ -25,6 +25,16 @@ Line3D::Line3D(Point3D& PointA, Point3D& PointB) : m_PointA(PointA), m_PointB(Po
 Line3D::~Line3D(){
 }
 
+bool Line3D::operator==(const Line3D& ALine) const{
+    if ((PointA == ALine.PointA && PointB == ALine.PointB) ||
+        (PointA == ALine.PointB && PointB == ALine.PointA)){
+
+        return true;
+    }
+    else{
+        return false;
+    }
+}
 
 /* non-static getters */
 
