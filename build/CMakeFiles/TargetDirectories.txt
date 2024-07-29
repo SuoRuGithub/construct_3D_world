@@ -1,0 +1,3 @@
+/home/zzpku/myCode/OOP/Construct3DWorld/build/CMakeFiles/rebuild_cache.dir
+/home/zzpku/myCode/OOP/Construct3DWorld/build/CMakeFiles/edit_cache.dir
+/home/zzpku/myCode/OOP/Construct3DWorld/build/CMakeFiles/Construct_3D_World.dir
