@@ -77,7 +77,7 @@ void objModel::ImportModelFromFile(const std::string& FileName){
                 LineString >> idx1;
                 LineString >> idx2;
                 Line3D Line(PointsList[idx1 - 1], PointsList[idx2 - 1]); 
-                m_LinesList.push_back(Line);
+                m_LinesList.push_back(std::move(Line));
                 break;
             }
             case 'f':{
@@ -89,7 +89,7 @@ void objModel::ImportModelFromFile(const std::string& FileName){
                 LineString >> idx2;
                 LineString >> idx3;
                 Face3D Face(PointsList[idx1 - 1], PointsList[idx2 - 1], PointsList[idx3 - 1]);
-                m_FacesList.push_back(Face);
+                m_FacesList.push_back(std::move(Face));
                 break;
             }
             default:

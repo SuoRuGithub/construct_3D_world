@@ -30,8 +30,11 @@ public:
     // 提供两个点的引用构造一个线段对象
     Line3D(Point3D& PointA, Point3D& PointB);
     // 删除拷贝构造函数和赋值运算符，从源头上保证不会构造出重复的对象
-    Line3D(const Line3D& Line) = delete;
-    const Line3D& operator=(const Line3D& Line) = delete;
+    Line3D(const Line3D& ALine) = delete;
+    const Line3D& operator=(const Line3D& ALine) = delete;
+    // 移动构造函数和移动赋值运算符
+    Line3D(Line3D&& ALine);
+    Line3D& operator=(Line3D&& ALine);
     // 析构函数
     ~Line3D();
 

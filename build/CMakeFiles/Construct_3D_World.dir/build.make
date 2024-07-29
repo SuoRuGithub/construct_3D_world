@@ -57,9 +57,35 @@ include CMakeFiles/Construct_3D_World.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/Construct_3D_World.dir/flags.make
 
+CMakeFiles/Construct_3D_World.dir/main.cpp.o: CMakeFiles/Construct_3D_World.dir/flags.make
+CMakeFiles/Construct_3D_World.dir/main.cpp.o: ../main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zzpku/myCode/OOP/Construct3DWorld/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Construct_3D_World.dir/main.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Construct_3D_World.dir/main.cpp.o -c /home/zzpku/myCode/OOP/Construct3DWorld/main.cpp
+
+CMakeFiles/Construct_3D_World.dir/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Construct_3D_World.dir/main.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zzpku/myCode/OOP/Construct3DWorld/main.cpp > CMakeFiles/Construct_3D_World.dir/main.cpp.i
+
+CMakeFiles/Construct_3D_World.dir/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Construct_3D_World.dir/main.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zzpku/myCode/OOP/Construct3DWorld/main.cpp -o CMakeFiles/Construct_3D_World.dir/main.cpp.s
+
+CMakeFiles/Construct_3D_World.dir/Model/Element3D.cpp.o: CMakeFiles/Construct_3D_World.dir/flags.make
+CMakeFiles/Construct_3D_World.dir/Model/Element3D.cpp.o: ../Model/Element3D.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zzpku/myCode/OOP/Construct3DWorld/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Construct_3D_World.dir/Model/Element3D.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Construct_3D_World.dir/Model/Element3D.cpp.o -c /home/zzpku/myCode/OOP/Construct3DWorld/Model/Element3D.cpp
+
+CMakeFiles/Construct_3D_World.dir/Model/Element3D.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Construct_3D_World.dir/Model/Element3D.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zzpku/myCode/OOP/Construct3DWorld/Model/Element3D.cpp > CMakeFiles/Construct_3D_World.dir/Model/Element3D.cpp.i
+
+CMakeFiles/Construct_3D_World.dir/Model/Element3D.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Construct_3D_World.dir/Model/Element3D.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zzpku/myCode/OOP/Construct3DWorld/Model/Element3D.cpp -o CMakeFiles/Construct_3D_World.dir/Model/Element3D.cpp.s
+
 CMakeFiles/Construct_3D_World.dir/Model/Face3D.cpp.o: CMakeFiles/Construct_3D_World.dir/flags.make
 CMakeFiles/Construct_3D_World.dir/Model/Face3D.cpp.o: ../Model/Face3D.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zzpku/myCode/OOP/Construct3DWorld/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Construct_3D_World.dir/Model/Face3D.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zzpku/myCode/OOP/Construct3DWorld/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Construct_3D_World.dir/Model/Face3D.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Construct_3D_World.dir/Model/Face3D.cpp.o -c /home/zzpku/myCode/OOP/Construct3DWorld/Model/Face3D.cpp
 
 CMakeFiles/Construct_3D_World.dir/Model/Face3D.cpp.i: cmake_force
@@ -72,7 +98,7 @@ CMakeFiles/Construct_3D_World.dir/Model/Face3D.cpp.s: cmake_force
 
 CMakeFiles/Construct_3D_World.dir/Model/Line3D.cpp.o: CMakeFiles/Construct_3D_World.dir/flags.make
 CMakeFiles/Construct_3D_World.dir/Model/Line3D.cpp.o: ../Model/Line3D.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zzpku/myCode/OOP/Construct3DWorld/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Construct_3D_World.dir/Model/Line3D.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zzpku/myCode/OOP/Construct3DWorld/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Construct_3D_World.dir/Model/Line3D.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Construct_3D_World.dir/Model/Line3D.cpp.o -c /home/zzpku/myCode/OOP/Construct3DWorld/Model/Line3D.cpp
 
 CMakeFiles/Construct_3D_World.dir/Model/Line3D.cpp.i: cmake_force
@@ -85,7 +111,7 @@ CMakeFiles/Construct_3D_World.dir/Model/Line3D.cpp.s: cmake_force
 
 CMakeFiles/Construct_3D_World.dir/Model/ModelBase.cpp.o: CMakeFiles/Construct_3D_World.dir/flags.make
 CMakeFiles/Construct_3D_World.dir/Model/ModelBase.cpp.o: ../Model/ModelBase.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zzpku/myCode/OOP/Construct3DWorld/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Construct_3D_World.dir/Model/ModelBase.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zzpku/myCode/OOP/Construct3DWorld/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Construct_3D_World.dir/Model/ModelBase.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Construct_3D_World.dir/Model/ModelBase.cpp.o -c /home/zzpku/myCode/OOP/Construct3DWorld/Model/ModelBase.cpp
 
 CMakeFiles/Construct_3D_World.dir/Model/ModelBase.cpp.i: cmake_force
@@ -98,7 +124,7 @@ CMakeFiles/Construct_3D_World.dir/Model/ModelBase.cpp.s: cmake_force
 
 CMakeFiles/Construct_3D_World.dir/Model/Point3D.cpp.o: CMakeFiles/Construct_3D_World.dir/flags.make
 CMakeFiles/Construct_3D_World.dir/Model/Point3D.cpp.o: ../Model/Point3D.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zzpku/myCode/OOP/Construct3DWorld/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Construct_3D_World.dir/Model/Point3D.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zzpku/myCode/OOP/Construct3DWorld/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Construct_3D_World.dir/Model/Point3D.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Construct_3D_World.dir/Model/Point3D.cpp.o -c /home/zzpku/myCode/OOP/Construct3DWorld/Model/Point3D.cpp
 
 CMakeFiles/Construct_3D_World.dir/Model/Point3D.cpp.i: cmake_force
@@ -111,7 +137,7 @@ CMakeFiles/Construct_3D_World.dir/Model/Point3D.cpp.s: cmake_force
 
 CMakeFiles/Construct_3D_World.dir/Model/objModel.cpp.o: CMakeFiles/Construct_3D_World.dir/flags.make
 CMakeFiles/Construct_3D_World.dir/Model/objModel.cpp.o: ../Model/objModel.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zzpku/myCode/OOP/Construct3DWorld/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Construct_3D_World.dir/Model/objModel.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zzpku/myCode/OOP/Construct3DWorld/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Construct_3D_World.dir/Model/objModel.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Construct_3D_World.dir/Model/objModel.cpp.o -c /home/zzpku/myCode/OOP/Construct3DWorld/Model/objModel.cpp
 
 CMakeFiles/Construct_3D_World.dir/Model/objModel.cpp.i: cmake_force
@@ -124,7 +150,7 @@ CMakeFiles/Construct_3D_World.dir/Model/objModel.cpp.s: cmake_force
 
 CMakeFiles/Construct_3D_World.dir/Controller/ControllerBase.cpp.o: CMakeFiles/Construct_3D_World.dir/flags.make
 CMakeFiles/Construct_3D_World.dir/Controller/ControllerBase.cpp.o: ../Controller/ControllerBase.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zzpku/myCode/OOP/Construct3DWorld/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Construct_3D_World.dir/Controller/ControllerBase.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zzpku/myCode/OOP/Construct3DWorld/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Construct_3D_World.dir/Controller/ControllerBase.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Construct_3D_World.dir/Controller/ControllerBase.cpp.o -c /home/zzpku/myCode/OOP/Construct3DWorld/Controller/ControllerBase.cpp
 
 CMakeFiles/Construct_3D_World.dir/Controller/ControllerBase.cpp.i: cmake_force
@@ -137,7 +163,7 @@ CMakeFiles/Construct_3D_World.dir/Controller/ControllerBase.cpp.s: cmake_force
 
 CMakeFiles/Construct_3D_World.dir/Controller/ControllerCLI.cpp.o: CMakeFiles/Construct_3D_World.dir/flags.make
 CMakeFiles/Construct_3D_World.dir/Controller/ControllerCLI.cpp.o: ../Controller/ControllerCLI.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zzpku/myCode/OOP/Construct3DWorld/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Construct_3D_World.dir/Controller/ControllerCLI.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zzpku/myCode/OOP/Construct3DWorld/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Construct_3D_World.dir/Controller/ControllerCLI.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Construct_3D_World.dir/Controller/ControllerCLI.cpp.o -c /home/zzpku/myCode/OOP/Construct3DWorld/Controller/ControllerCLI.cpp
 
 CMakeFiles/Construct_3D_World.dir/Controller/ControllerCLI.cpp.i: cmake_force
@@ -150,7 +176,7 @@ CMakeFiles/Construct_3D_World.dir/Controller/ControllerCLI.cpp.s: cmake_force
 
 CMakeFiles/Construct_3D_World.dir/View/View.cpp.o: CMakeFiles/Construct_3D_World.dir/flags.make
 CMakeFiles/Construct_3D_World.dir/View/View.cpp.o: ../View/View.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zzpku/myCode/OOP/Construct3DWorld/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Construct_3D_World.dir/View/View.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zzpku/myCode/OOP/Construct3DWorld/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/Construct_3D_World.dir/View/View.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Construct_3D_World.dir/View/View.cpp.o -c /home/zzpku/myCode/OOP/Construct3DWorld/View/View.cpp
 
 CMakeFiles/Construct_3D_World.dir/View/View.cpp.i: cmake_force
@@ -163,6 +189,8 @@ CMakeFiles/Construct_3D_World.dir/View/View.cpp.s: cmake_force
 
 # Object files for target Construct_3D_World
 Construct_3D_World_OBJECTS = \
+"CMakeFiles/Construct_3D_World.dir/main.cpp.o" \
+"CMakeFiles/Construct_3D_World.dir/Model/Element3D.cpp.o" \
 "CMakeFiles/Construct_3D_World.dir/Model/Face3D.cpp.o" \
 "CMakeFiles/Construct_3D_World.dir/Model/Line3D.cpp.o" \
 "CMakeFiles/Construct_3D_World.dir/Model/ModelBase.cpp.o" \
@@ -175,6 +203,8 @@ Construct_3D_World_OBJECTS = \
 # External object files for target Construct_3D_World
 Construct_3D_World_EXTERNAL_OBJECTS =
 
+Construct_3D_World: CMakeFiles/Construct_3D_World.dir/main.cpp.o
+Construct_3D_World: CMakeFiles/Construct_3D_World.dir/Model/Element3D.cpp.o
 Construct_3D_World: CMakeFiles/Construct_3D_World.dir/Model/Face3D.cpp.o
 Construct_3D_World: CMakeFiles/Construct_3D_World.dir/Model/Line3D.cpp.o
 Construct_3D_World: CMakeFiles/Construct_3D_World.dir/Model/ModelBase.cpp.o
@@ -185,7 +215,7 @@ Construct_3D_World: CMakeFiles/Construct_3D_World.dir/Controller/ControllerCLI.c
 Construct_3D_World: CMakeFiles/Construct_3D_World.dir/View/View.cpp.o
 Construct_3D_World: CMakeFiles/Construct_3D_World.dir/build.make
 Construct_3D_World: CMakeFiles/Construct_3D_World.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/zzpku/myCode/OOP/Construct3DWorld/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable Construct_3D_World"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/zzpku/myCode/OOP/Construct3DWorld/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX executable Construct_3D_World"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Construct_3D_World.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

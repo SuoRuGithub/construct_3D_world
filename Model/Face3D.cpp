@@ -11,9 +11,21 @@ using PointPtr      = std::shared_ptr<Point3D>;
 // ExceptionCollinear::ExceptionCollinear() : std::invalid_argument("Three points shouldn't be collinear"){
 // }
 
-// 提供两个点的引用构造一个面对象
+// 提供三个点的引用构造一个面对象
 Face3D::Face3D(Point3D& PointA, Point3D& PointB, Point3D& PointC)
     : m_PointA(PointA), m_PointB(PointB), m_PointC(PointC){
+}
+
+// 定义转移构造函数和转移赋值运算符
+Face3D::Face3D(Face3D&& AFace) : m_PointA(AFace.PointA), m_PointB(AFace.PointB), m_PointC(AFace.PointC){
+}
+Face3D& Face3D::operator=(Face3D&& AFace){
+    if (this != &AFace){
+        m_PointA = AFace.PointA;
+        m_PointB = AFace.PointB;
+        m_PointC = AFace.PointC;
+    }
+    return *this;
 }
 
 // 析构函数
@@ -22,12 +34,12 @@ Face3D::~Face3D(){
 
 // 重载 == 运算符 （注：在这里我们不考虑PointA / B / C的排序）
 bool Face3D::operator==(const Face3D& AFace){
-    if ((PointA == AFace.PointA && PointB == AFace.PointB && AFace.PointC) ||
-        (PointA == AFace.PointA && PointB == AFace.PointC && AFace.PointB) ||
-        (PointA == AFace.PointB && PointB == AFace.PointA && AFace.PointC) ||
-        (PointA == AFace.PointB && PointB == AFace.PointC && AFace.PointA) ||
-        (PointA == AFace.PointC && PointB == AFace.PointA && AFace.PointB) ||
-        (PointA == AFace.PointC && PointB == AFace.PointB && AFace.PointA)){
+    if ((PointA == AFace.PointA && PointB == AFace.PointB && PointC == AFace.PointC) ||
+        (PointA == AFace.PointA && PointB == AFace.PointC && PointC == AFace.PointB) ||
+        (PointA == AFace.PointB && PointB == AFace.PointA && PointC == AFace.PointC) ||
+        (PointA == AFace.PointB && PointB == AFace.PointC && PointC == AFace.PointA) ||
+        (PointA == AFace.PointC && PointB == AFace.PointA && PointC == AFace.PointB) ||
+        (PointA == AFace.PointC && PointB == AFace.PointB && PointC == AFace.PointA)){
 
         return true;
     }

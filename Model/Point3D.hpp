@@ -5,7 +5,9 @@
 #ifndef _POINT3D_HPP
 #define _POINT3D_HPP
 
+
 // 点的指针
+class Point3D;  // 前向声明
 using PointPtr = std::shared_ptr<Point3D>;
 
 /* 异常类 */

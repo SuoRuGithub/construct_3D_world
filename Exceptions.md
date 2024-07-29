@@ -6,7 +6,7 @@
 
 `ExceptionIndexOutOfRange`
 
-- 弃用
+- 索引非法
 
 `ExceptionInvalidCoordinates`
 

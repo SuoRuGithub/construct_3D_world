@@ -4,6 +4,12 @@
 
 using PointPtr = std::shared_ptr<Point3D>;
 
+ExceptionInvalidCoordinates::ExceptionInvalidCoordinates() : std::invalid_argument("Invalid Coordinates"){
+}
+
+ExceptionIndexOutOfRange::ExceptionIndexOutOfRange() : std::invalid_argument("Index oput of range"){
+}
+
 // 构造函数
 // * 带参数的构造函数
 Point3D::Point3D(double x, double y, double z) : m_x(x), m_y(y), m_z(z){
@@ -13,9 +19,13 @@ Point3D::Point3D(const Point3D& APoint) : m_x(APoint.x), m_y(APoint.y), m_z(APoi
 }
 // * 赋值运算符重载
 Point3D& Point3D::operator=(const Point3D& APoint){
-    m_x = APoint.x;
-    m_y = APoint.y;
-    m_z = APoint.z;
+    if (this != &APoint){
+        m_x = APoint.x;
+        m_y = APoint.y;
+        m_z = APoint.z;
+    }
+    return *this;
+    
 }
 // * 析构函数
 Point3D::~Point3D(){
@@ -55,7 +65,7 @@ double Point3D::Distance(const Point3D& APoint) const{
 }
 
 // 判断另一个点对象和当前点是否重合
-bool Point3D::IsCoincide(const Point3D& APoint, double precision = 1e-5) const{
+bool Point3D::IsCoincide(const Point3D& APoint, double precision) const{
     if ((std::abs(m_x - APoint.x) < precision) && 
         (std::abs(m_y - APoint.y) < precision) &&
         (std::abs(m_z - APoint.z) < precision)){
@@ -71,6 +81,7 @@ bool Point3D::IsCoincide(const Point3D& APoint, double precision = 1e-5) const{
 
 bool Point3D::IsCollinear(const Point3D& PointA, const Point3D& PointB, const Point3D& PointC){
     // 使用Vector类的叉积进行判断
+    return false;
 }
 
 double Point3D::Distance(const Point3D& PointA, const Point3D& PointB){
@@ -80,7 +91,7 @@ double Point3D::Distance(const Point3D& PointA, const Point3D& PointB){
     return sqrt(distance);
 }
 
-bool Point3D::IsCoincide(const Point3D& PointA, const Point3D& PointB, double precision = 1e-5){
+bool Point3D::IsCoincide(const Point3D& PointA, const Point3D& PointB, double precision /*= 1e-5*/){    // note that default parameters shouldn't be shown in definition.
     if ((std::abs(PointA.x - PointB.x) < precision) && 
         (std::abs(PointA.y - PointB.y) < precision) &&
         (std::abs(PointA.z - PointB.z) < precision)){
@@ -92,6 +103,6 @@ bool Point3D::IsCoincide(const Point3D& PointA, const Point3D& PointB, double pr
     }
 }
 
-bool Point3D::IsCoincide(const Point3D& PointA, double x, double y, double z, double precision = 1e-5){
+bool Point3D::IsCoincide(const Point3D& PointA, double x, double y, double z, double precision){
     return Point3D::IsCoincide(PointA, Point3D(x, y, z), precision);
 }

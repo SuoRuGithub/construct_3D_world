@@ -20,7 +20,7 @@ public:
     ModelBase(const ModelBase& AModel)            = delete;
     ModelBase& operator=(const ModelBase& AModel) = delete;    
     // 虚的析构函数
-    virtual ~ModelBase() = 0;
+    virtual ~ModelBase(); // = 0; 或者将基类的析构函数作为虚函数，给出基类的实现；或者将基类的析构函数作为纯虚函数，但是要在写派生类的时候同时完成基类和派生类的析构函数
 
     // 导入模型
     virtual void ImportModelFromFile(const std::string& FileName) = 0;

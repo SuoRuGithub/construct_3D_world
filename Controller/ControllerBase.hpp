@@ -6,7 +6,7 @@
 #include"../Model/Line3D.hpp"
 #include"../Model/ModelBase.hpp"
 #include"../Model/objModel.hpp"
-#include"../Model/Vector3D.hpp"
+// #include"../Model/Vector3D.hpp"
 
 #ifndef _CONTROLLERBASE_HPP
 #define _CONTROLLERBASE_HPP
@@ -161,6 +161,9 @@ public:
     LineDetail GetPointsOfLine(unsigned int LineIdx);
 
     ControllerReturn ModifyPointOfLine(unsigned int LineIdx, unsigned int PointIdx, double x, double y, double z);
+
+    /******************STATISTICAL**************** */
+    StatisticalInfo GetStatisticalInfo();
 
 private:
     // 给定的三维模型文件

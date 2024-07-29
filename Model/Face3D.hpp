@@ -11,18 +11,21 @@
 using PointPtr      = std::shared_ptr<Point3D>;
 
 /* 异常类 */
-// SetPoint使用，声明在
+// SetPoint使用，声明在Point类中
 class ExceptionIndexOutOfRange;
 
 class Face3D : public Element3D{
 public:
     // 删除默认构造函数，因为想要构造一个面至少需要已经存在三个点
     Face3D() = delete;
-    // 提供两个点的引用构造一个面对象
+    // 提供三个点的引用构造一个面对象
     Face3D(Point3D& PointA, Point3D& PointB, Point3D& PointC);
     // 删除拷贝构造函数和赋值运算符，保证不会意外构造出重复的对象
     Face3D(const Face3D&)            = delete;
     Face3D& operator=(const Face3D&) = delete;
+    // 定义转移构造函数和转移赋值运算符
+    Face3D(Face3D&& AFace);
+    Face3D& operator=(Face3D&& AFace);
     // 析构函数
     ~Face3D();
 

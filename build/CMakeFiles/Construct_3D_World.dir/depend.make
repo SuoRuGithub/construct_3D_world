@@ -10,7 +10,19 @@ CMakeFiles/Construct_3D_World.dir/Controller/ControllerBase.cpp.o: ../Model/Mode
 CMakeFiles/Construct_3D_World.dir/Controller/ControllerBase.cpp.o: ../Model/Point3D.hpp
 CMakeFiles/Construct_3D_World.dir/Controller/ControllerBase.cpp.o: ../Model/objModel.hpp
 
+CMakeFiles/Construct_3D_World.dir/Controller/ControllerCLI.cpp.o: ../Controller/ControllerBase.hpp
 CMakeFiles/Construct_3D_World.dir/Controller/ControllerCLI.cpp.o: ../Controller/ControllerCLI.cpp
+CMakeFiles/Construct_3D_World.dir/Controller/ControllerCLI.cpp.o: ../Controller/ControllerCLI.hpp
+CMakeFiles/Construct_3D_World.dir/Controller/ControllerCLI.cpp.o: ../Model/Element3D.hpp
+CMakeFiles/Construct_3D_World.dir/Controller/ControllerCLI.cpp.o: ../Model/Face3D.hpp
+CMakeFiles/Construct_3D_World.dir/Controller/ControllerCLI.cpp.o: ../Model/Line3D.hpp
+CMakeFiles/Construct_3D_World.dir/Controller/ControllerCLI.cpp.o: ../Model/ModelBase.hpp
+CMakeFiles/Construct_3D_World.dir/Controller/ControllerCLI.cpp.o: ../Model/Point3D.hpp
+CMakeFiles/Construct_3D_World.dir/Controller/ControllerCLI.cpp.o: ../Model/objModel.hpp
+
+CMakeFiles/Construct_3D_World.dir/Model/Element3D.cpp.o: ../Model/Element3D.cpp
+CMakeFiles/Construct_3D_World.dir/Model/Element3D.cpp.o: ../Model/Element3D.hpp
+CMakeFiles/Construct_3D_World.dir/Model/Element3D.cpp.o: ../Model/Point3D.hpp
 
 CMakeFiles/Construct_3D_World.dir/Model/Face3D.cpp.o: ../Model/Element3D.hpp
 CMakeFiles/Construct_3D_World.dir/Model/Face3D.cpp.o: ../Model/Face3D.cpp
@@ -50,4 +62,15 @@ CMakeFiles/Construct_3D_World.dir/View/View.cpp.o: ../Model/Point3D.hpp
 CMakeFiles/Construct_3D_World.dir/View/View.cpp.o: ../Model/objModel.hpp
 CMakeFiles/Construct_3D_World.dir/View/View.cpp.o: ../View/View.cpp
 CMakeFiles/Construct_3D_World.dir/View/View.cpp.o: ../View/View.hpp
+
+CMakeFiles/Construct_3D_World.dir/main.cpp.o: ../Controller/ControllerBase.hpp
+CMakeFiles/Construct_3D_World.dir/main.cpp.o: ../Controller/ControllerCLI.hpp
+CMakeFiles/Construct_3D_World.dir/main.cpp.o: ../Model/Element3D.hpp
+CMakeFiles/Construct_3D_World.dir/main.cpp.o: ../Model/Face3D.hpp
+CMakeFiles/Construct_3D_World.dir/main.cpp.o: ../Model/Line3D.hpp
+CMakeFiles/Construct_3D_World.dir/main.cpp.o: ../Model/ModelBase.hpp
+CMakeFiles/Construct_3D_World.dir/main.cpp.o: ../Model/Point3D.hpp
+CMakeFiles/Construct_3D_World.dir/main.cpp.o: ../Model/objModel.hpp
+CMakeFiles/Construct_3D_World.dir/main.cpp.o: ../View/View.hpp
+CMakeFiles/Construct_3D_World.dir/main.cpp.o: ../main.cpp
 

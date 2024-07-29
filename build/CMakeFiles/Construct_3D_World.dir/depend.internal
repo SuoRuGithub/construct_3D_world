@@ -11,7 +11,19 @@ CMakeFiles/Construct_3D_World.dir/Controller/ControllerBase.cpp.o
  /home/zzpku/myCode/OOP/Construct3DWorld/Model/Point3D.hpp
  /home/zzpku/myCode/OOP/Construct3DWorld/Model/objModel.hpp
 CMakeFiles/Construct_3D_World.dir/Controller/ControllerCLI.cpp.o
+ /home/zzpku/myCode/OOP/Construct3DWorld/Controller/ControllerBase.hpp
  /home/zzpku/myCode/OOP/Construct3DWorld/Controller/ControllerCLI.cpp
+ /home/zzpku/myCode/OOP/Construct3DWorld/Controller/ControllerCLI.hpp
+ /home/zzpku/myCode/OOP/Construct3DWorld/Model/Element3D.hpp
+ /home/zzpku/myCode/OOP/Construct3DWorld/Model/Face3D.hpp
+ /home/zzpku/myCode/OOP/Construct3DWorld/Model/Line3D.hpp
+ /home/zzpku/myCode/OOP/Construct3DWorld/Model/ModelBase.hpp
+ /home/zzpku/myCode/OOP/Construct3DWorld/Model/Point3D.hpp
+ /home/zzpku/myCode/OOP/Construct3DWorld/Model/objModel.hpp
+CMakeFiles/Construct_3D_World.dir/Model/Element3D.cpp.o
+ /home/zzpku/myCode/OOP/Construct3DWorld/Model/Element3D.cpp
+ /home/zzpku/myCode/OOP/Construct3DWorld/Model/Element3D.hpp
+ /home/zzpku/myCode/OOP/Construct3DWorld/Model/Point3D.hpp
 CMakeFiles/Construct_3D_World.dir/Model/Face3D.cpp.o
  /home/zzpku/myCode/OOP/Construct3DWorld/Model/Element3D.hpp
  /home/zzpku/myCode/OOP/Construct3DWorld/Model/Face3D.cpp
@@ -51,3 +63,14 @@ CMakeFiles/Construct_3D_World.dir/View/View.cpp.o
  /home/zzpku/myCode/OOP/Construct3DWorld/Model/objModel.hpp
  /home/zzpku/myCode/OOP/Construct3DWorld/View/View.cpp
  /home/zzpku/myCode/OOP/Construct3DWorld/View/View.hpp
+CMakeFiles/Construct_3D_World.dir/main.cpp.o
+ /home/zzpku/myCode/OOP/Construct3DWorld/Controller/ControllerBase.hpp
+ /home/zzpku/myCode/OOP/Construct3DWorld/Controller/ControllerCLI.hpp
+ /home/zzpku/myCode/OOP/Construct3DWorld/Model/Element3D.hpp
+ /home/zzpku/myCode/OOP/Construct3DWorld/Model/Face3D.hpp
+ /home/zzpku/myCode/OOP/Construct3DWorld/Model/Line3D.hpp
+ /home/zzpku/myCode/OOP/Construct3DWorld/Model/ModelBase.hpp
+ /home/zzpku/myCode/OOP/Construct3DWorld/Model/Point3D.hpp
+ /home/zzpku/myCode/OOP/Construct3DWorld/Model/objModel.hpp
+ /home/zzpku/myCode/OOP/Construct3DWorld/View/View.hpp
+ /home/zzpku/myCode/OOP/Construct3DWorld/main.cpp

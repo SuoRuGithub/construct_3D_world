@@ -19,6 +19,8 @@ ExceptionFaceExist::ExceptionFaceExist() : std::invalid_argument("Face exist"){
 ModelBase::ModelBase(){
 }
 
+ModelBase::~ModelBase(){
+}
 
 /* non-static setters*/
 
@@ -58,7 +60,7 @@ void ModelBase::AddFace(double x1, double y1, double z1,
     if (IsFaceExist(Face)){
         throw ExceptionFaceExist();
     }
-    m_FacesList.push_back(Face);
+    m_FacesList.push_back(std::move(Face));
 }
 // 给定两个点坐标，向模型中添加一个线
 void ModelBase::AddLine(double x1, double y1, double z1,
@@ -70,7 +72,7 @@ void ModelBase::AddLine(double x1, double y1, double z1,
     if (IsLineExist(Line)){
         throw ExceptionLineExist();
     }
-    m_LinesList.push_back(Line);
+    m_LinesList.push_back(std::move(Line));
 }
 
 
@@ -228,5 +230,4 @@ bool ModelBase::IsLineExist(const Line3D& Line){
     else{
         return true;
     }
-
 }

@@ -6,12 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/zzpku/myCode/OOP/Construct3DWorld/Controller/ControllerBase.cpp
-stdexcept
--
-ControllerBase.hpp
-/home/zzpku/myCode/OOP/Construct3DWorld/Controller/ControllerBase.hpp
-
 /home/zzpku/myCode/OOP/Construct3DWorld/Controller/ControllerBase.hpp
 stdexcept
 -
@@ -98,19 +92,17 @@ Face3D.hpp
 ModelBase.hpp
 /home/zzpku/myCode/OOP/Construct3DWorld/Model/ModelBase.hpp
 
-/home/zzpku/myCode/OOP/Construct3DWorld/View/View.cpp
-iostream
--
-sstream
--
-string
--
-View.hpp
-/home/zzpku/myCode/OOP/Construct3DWorld/View/View.hpp
-
 /home/zzpku/myCode/OOP/Construct3DWorld/View/View.hpp
 string
 -
 ../Controller/ControllerCLI.hpp
 /home/zzpku/myCode/OOP/Construct3DWorld/Controller/ControllerCLI.hpp
+
+/home/zzpku/myCode/OOP/Construct3DWorld/main.cpp
+iostream
+-
+./Controller/ControllerCLI.hpp
+/home/zzpku/myCode/OOP/Construct3DWorld/Controller/ControllerCLI.hpp
+./View/View.hpp
+/home/zzpku/myCode/OOP/Construct3DWorld/View/View.hpp
 

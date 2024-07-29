@@ -20,6 +20,17 @@ ExceptionTargetLineNotExist::ExceptionTargetLineNotExist() : std::invalid_argume
 // 提供两个点的引用构造一个线段对象
 Line3D::Line3D(Point3D& PointA, Point3D& PointB) : m_PointA(PointA), m_PointB(PointB){
 }
+
+// 移动构造函数和移动赋值运算符
+Line3D::Line3D(Line3D&& ALine) : m_PointA(ALine.PointA), m_PointB(ALine.PointB){
+}
+Line3D& Line3D::operator=(Line3D&& ALine){
+    if (this != &ALine){
+        m_PointA = ALine.PointA;
+        m_PointB = ALine.PointB;
+    }
+    return *this;
+}
     
 // 析构函数
 Line3D::~Line3D(){

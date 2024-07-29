@@ -156,6 +156,42 @@ ControllerReturn ControllerBase::AddLine(double x1, double y1, double z1,
     return ControllerReturn::LINE_ADDED;
 }
 
-LineDetail GetPointsOfLine(unsigned int LineIdx);
+LineDetail ControllerBase::GetPointsOfLine(unsigned int LineIdx){
+    if (LineIdx >= m_ptrModel->LinesList.size()){
+        throw ExceptionIndexOutOfRange();
+    }   
+    else{
+        const Line3D& Line = m_ptrModel->LinesList[LineIdx];
+        LineDetail detail = {LineIdx, Line.PointA.x, Line.PointA.y, Line.PointA.z,
+                                      Line.PointB.x, Line.PointB.y, Line.PointB.z};
+        return detail;
+    }
+}
 
-ControllerReturn ModifyPointOfLine(unsigned int LineIdx, unsigned int PointIdx, double x, double y, double z);
+ControllerReturn ControllerBase::ModifyPointOfLine(unsigned int LineIdx, unsigned int PointIdx, double x, double y, double z){
+    try{
+        m_ptrModel->SetPointOfLine(LineIdx, PointIdx, x, y, z);
+        return ControllerReturn::POINT_OF_FACE_CHANGED;
+    }
+    catch(ExceptionIndexOutOfRange e){
+        // 给的索引不在范围内
+        return ControllerReturn::INDEX_OUT_OF_RANGE;
+    }
+    catch(ExceptionPointsRepeated e){
+        // 点和其他两个点之一重复了
+        return ControllerReturn::POINTS_REPEATED;
+    }
+}
+
+
+/******************STATISTICAL**************** */
+StatisticalInfo ControllerBase::GetStatisticalInfo(){
+    StatisticalInfo info;
+    info.FaceNum           = m_ptrModel->GetTotalFacesNum();
+    info.LineNum           = m_ptrModel->GetTotalLinesNum();
+    info.PointNum          = m_ptrModel->GetTotalPointsNum();
+    info.BoundingBoxVolume = m_ptrModel->GetMinBoundingBox();
+    info.FaceArea          = m_ptrModel->GetTotalFacesArea();
+    info.LineLength        = m_ptrModel->GetTotalLinesLength();
+    return info;
+}
