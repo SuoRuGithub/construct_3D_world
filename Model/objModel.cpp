@@ -160,7 +160,7 @@ void objModel::ExportModelToFile(const std::string& FileName){
     if (FaceIdx.size() % 3 != 0){
         throw std::invalid_argument("Error! Numbers of vertices of faces cannot be devided by 3!");
     }
-    if (LineIdx.size() != 0){
+    if (FaceIdx.size() != 0){
         for (int i = 0; i < FaceIdx.size(); i += 3){
             File << "f " << FaceIdx[i] << " " << FaceIdx[i + 1] << " " << FaceIdx[i + 2] << std::endl;
         }

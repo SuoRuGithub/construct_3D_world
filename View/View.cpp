@@ -171,10 +171,10 @@ std::string View::ModifyMenu (ControllerCLI& Controller){
             std::cout << " - Enter  wq<Enter>                                                           Return to Modify Menu"              << std::endl << std::endl;
             command.clear();
             getline(std::cin, command);
-            if(command == "Add"){
-                std::vector<double> coordinates(6);
+            if(command.substr(0, 3) == "Add"){
+                std::vector<double> coordinates;
                 std::istringstream iss(command.substr(3));
-                for (int i = 0; i < 6; i++){
+                for (int i = 0; i < 9; i++){
                     double coordinate = 0.0;
                     if (iss >> coordinate){
                         coordinates.push_back(coordinate);
@@ -185,12 +185,24 @@ std::string View::ModifyMenu (ControllerCLI& Controller){
                     }
                 }
                 if (coordinates.size() == 9){
-                    Controller.AddFace(coordinates[0], coordinates[1], coordinates[2], 
-                                       coordinates[3], coordinates[4], coordinates[5], 
-                                       coordinates[6], coordinates[7], coordinates[8]);
+                    ControllerReturn res = Controller.AddFace(coordinates[0], coordinates[1], coordinates[2], 
+                                                              coordinates[3], coordinates[4], coordinates[5], 
+                                                              coordinates[6], coordinates[7], coordinates[8]);
+                    if (res == ControllerReturn::FACE_REPEATED){
+                        std::cout << "The face you want to add already exist." << std::endl;
+                    }
+                    else if (res == ControllerReturn::POINTS_REPEATED){
+                        std::cout << "The points of a face shouldn't be repeated." << std::endl;
+                    }
+                    else if (res == ControllerReturn::FACE_ADDED){
+                        std::cout << "The face are added successfully!" << std::endl;
+                    }
+                }
+                else{
+                    std::cout << "Lack of argument." << std::endl;
                 }
             }
-            else if (command == "Delete"){
+            else if (command.substr(0, 6) == "Delete"){
                 std::istringstream iss(command.substr(6));
                 unsigned int idx = 0;
                 if (iss >> idx){
@@ -206,7 +218,7 @@ std::string View::ModifyMenu (ControllerCLI& Controller){
                     std::cout << "Please enter the index of a face." << std::endl;
                 }
             }
-            else if (command == "Modify"){
+            else if (command.substr(0, 6) == "Modify"){
                 std::istringstream iss(command.substr(6));
                 int FaceIdx     = 0;
                 int PointIdx    = 0;
@@ -248,7 +260,7 @@ std::string View::ModifyMenu (ControllerCLI& Controller){
             command.clear();
             getline(std::cin, command);
             if(command == "Add"){
-                std::vector<double> coordinates(6);
+                std::vector<double> coordinates;
                 std::istringstream iss(command.substr(3));
                 for (int i = 0; i < 6; i++){
                     double coordinate = 0.0;
@@ -261,11 +273,21 @@ std::string View::ModifyMenu (ControllerCLI& Controller){
                     }
                 }
                 if (coordinates.size() == 6){
-                    Controller.AddLine(coordinates[0], coordinates[1], coordinates[2], 
-                                       coordinates[3], coordinates[4], coordinates[5]);
+                    ControllerReturn res = Controller.AddLine(coordinates[0], coordinates[1], coordinates[2], 
+                                                              coordinates[3], coordinates[4], coordinates[5]);
+                    if (res == ControllerReturn::LINE_REPEATED){
+                        std::cout << "The line you want to add already exist." << std::endl;
+                    }
+                    else if (res == ControllerReturn::POINTS_REPEATED){
+                        std::cout << "The points of a line shouldn't be repeated." << std::endl;
+                    }
+                    else if (res == ControllerReturn::LINE_ADDED){
+                        std::cout << "The line are added successfully!" << std::endl;
+                    }
+                    
                 }
             }
-            else if (command == "Delete"){
+            else if (command.substr(0, 6) == "Delete"){
                 std::istringstream iss(command.substr(6));
                 unsigned int idx = 0;
                 if (iss >> idx){
@@ -281,7 +303,7 @@ std::string View::ModifyMenu (ControllerCLI& Controller){
                     std::cout << "Please enter the index of a line." << std::endl;
                 }
             }
-            else if (command == "Modify"){
+            else if (command.substr(0, 6) == "Modify"){
                 std::istringstream iss(command.substr(6));
                 int LineIdx     = 0;
                 int PointIdx    = 0;
