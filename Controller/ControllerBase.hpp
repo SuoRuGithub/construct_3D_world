@@ -132,7 +132,7 @@ struct PointDetail{
 class ControllerBase{
 public:
     // 从给定的obj文件中创建模型的相关信息，
-    ControllerBase(const std::string& objFileName);
+    ControllerBase(const std::string& FileName);
     // 将修改后的模型存储在给定的文件中
     virtual ~ControllerBase();
 
@@ -167,9 +167,9 @@ public:
 
 private:
     // 给定的三维模型文件
-    std::string m_FileName;
+    std::string m_FileName      {""};
     // 三维模型的指针
-    ModelBasePtr    m_ptrModel;         // 在这里设置为基类Model的指针，在构造Controller时会分析文件格式，将Model
+    ModelBasePtr    m_ptrModel  {nullptr};         // 在这里设置为基类Model的指针，在构造Controller时会分析文件格式，将Model
 };
 
 #endif

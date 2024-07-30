@@ -6,12 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/zzpku/myCode/OOP/Construct3DWorld/Controller/ControllerBase.cpp
-stdexcept
--
-ControllerBase.hpp
-/home/zzpku/myCode/OOP/Construct3DWorld/Controller/ControllerBase.hpp
-
 /home/zzpku/myCode/OOP/Construct3DWorld/Controller/ControllerBase.hpp
 stdexcept
 -
@@ -30,37 +24,15 @@ string
 ../Model/objModel.hpp
 /home/zzpku/myCode/OOP/Construct3DWorld/Model/objModel.hpp
 
-/home/zzpku/myCode/OOP/Construct3DWorld/Controller/ControllerCLI.cpp
-ControllerCLI.hpp
-/home/zzpku/myCode/OOP/Construct3DWorld/Controller/ControllerCLI.hpp
-
 /home/zzpku/myCode/OOP/Construct3DWorld/Controller/ControllerCLI.hpp
 ControllerBase.hpp
 /home/zzpku/myCode/OOP/Construct3DWorld/Controller/ControllerBase.hpp
 
-/home/zzpku/myCode/OOP/Construct3DWorld/Model/Element3D.cpp
-Element3D.hpp
-/home/zzpku/myCode/OOP/Construct3DWorld/Model/Element3D.hpp
-
 /home/zzpku/myCode/OOP/Construct3DWorld/Model/Element3D.hpp
 memory
 -
 vector
 -
-Point3D.hpp
-/home/zzpku/myCode/OOP/Construct3DWorld/Model/Point3D.hpp
-
-/home/zzpku/myCode/OOP/Construct3DWorld/Model/Face3D.cpp
-cmath
--
-vector
--
-memory
--
-stdexcept
--
-Face3D.hpp
-/home/zzpku/myCode/OOP/Construct3DWorld/Model/Face3D.hpp
 Point3D.hpp
 /home/zzpku/myCode/OOP/Construct3DWorld/Model/Point3D.hpp
 
@@ -76,20 +48,6 @@ Point3D.hpp
 Element3D.hpp
 /home/zzpku/myCode/OOP/Construct3DWorld/Model/Element3D.hpp
 
-/home/zzpku/myCode/OOP/Construct3DWorld/Model/Line3D.cpp
-memory
--
-algorithm
--
-vector
--
-stdexcept
--
-Point3D.hpp
-/home/zzpku/myCode/OOP/Construct3DWorld/Model/Point3D.hpp
-Line3D.hpp
-/home/zzpku/myCode/OOP/Construct3DWorld/Model/Line3D.hpp
-
 /home/zzpku/myCode/OOP/Construct3DWorld/Model/Line3D.hpp
 memory
 -
@@ -99,26 +57,6 @@ Point3D.hpp
 /home/zzpku/myCode/OOP/Construct3DWorld/Model/Point3D.hpp
 Element3D.hpp
 /home/zzpku/myCode/OOP/Construct3DWorld/Model/Element3D.hpp
-
-/home/zzpku/myCode/OOP/Construct3DWorld/Model/ModelBase.cpp
-algorithm
--
-limits
--
-sstream
--
-string
--
-fstream
--
-ModelBase.hpp
-/home/zzpku/myCode/OOP/Construct3DWorld/Model/ModelBase.hpp
-Point3D.hpp
-/home/zzpku/myCode/OOP/Construct3DWorld/Model/Point3D.hpp
-Line3D.hpp
-/home/zzpku/myCode/OOP/Construct3DWorld/Model/Line3D.hpp
-Face3D.hpp
-/home/zzpku/myCode/OOP/Construct3DWorld/Model/Face3D.hpp
 
 /home/zzpku/myCode/OOP/Construct3DWorld/Model/ModelBase.hpp
 vector
@@ -130,14 +68,6 @@ Line3D.hpp
 Face3D.hpp
 /home/zzpku/myCode/OOP/Construct3DWorld/Model/Face3D.hpp
 
-/home/zzpku/myCode/OOP/Construct3DWorld/Model/Point3D.cpp
-memory
--
-cmath
--
-Point3D.hpp
-/home/zzpku/myCode/OOP/Construct3DWorld/Model/Point3D.hpp
-
 /home/zzpku/myCode/OOP/Construct3DWorld/Model/Point3D.hpp
 vector
 -
@@ -145,26 +75,6 @@ stdexcept
 -
 memory
 -
-
-/home/zzpku/myCode/OOP/Construct3DWorld/Model/objModel.cpp
-algorithm
--
-limits
--
-sstream
--
-string
--
-fstream
--
-objModel.hpp
-/home/zzpku/myCode/OOP/Construct3DWorld/Model/objModel.hpp
-Point3D.hpp
-/home/zzpku/myCode/OOP/Construct3DWorld/Model/Point3D.hpp
-Line3D.hpp
-/home/zzpku/myCode/OOP/Construct3DWorld/Model/Line3D.hpp
-Face3D.hpp
-/home/zzpku/myCode/OOP/Construct3DWorld/Model/Face3D.hpp
 
 /home/zzpku/myCode/OOP/Construct3DWorld/Model/objModel.hpp
 stdexcept
@@ -197,12 +107,4 @@ string
 -
 ../Controller/ControllerCLI.hpp
 /home/zzpku/myCode/OOP/Construct3DWorld/Controller/ControllerCLI.hpp
-
-/home/zzpku/myCode/OOP/Construct3DWorld/main.cpp
-iostream
--
-./Controller/ControllerCLI.hpp
-/home/zzpku/myCode/OOP/Construct3DWorld/Controller/ControllerCLI.hpp
-./View/View.hpp
-/home/zzpku/myCode/OOP/Construct3DWorld/View/View.hpp
 

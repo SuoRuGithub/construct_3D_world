@@ -9,13 +9,15 @@ View::View(){
 // 主菜单
 std::string View::MainMenu   (ControllerCLI& Controller){
     std::string command = "Main";
-    std::cout << std::endl << std::endl << std::endl << std::endl << std::endl;
-    std::cout << "          -----------------Construct your 3D world!-----------------" << std::endl << std::endl;
-    std::cout << "                                Developed by zz                     " << std::endl << std::endl;
-    std::cout << "                - Enter  Display<Enter>         Skip to display menu" << std::endl << std::endl;
-    std::cout << "                - Enter  Modify<Enter>          Skip to modify menu"  << std::endl << std::endl;
-    std::cout << "                - Enter  wq<Enter>              Save and quit"        << std::endl << std::endl;
+    
     while (command != "wq" && command != ":wq"){
+        std::cout << std::endl << std::endl << std::endl << std::endl << std::endl;
+        std::cout << "          -----------------Construct your 3D world!-----------------" << std::endl << std::endl;
+        std::cout << "                                Developed by zz                     " << std::endl << std::endl;
+        std::cout << "                - Enter  Display<Enter>         Skip to display menu" << std::endl << std::endl;
+        std::cout << "                - Enter  Modify<Enter>          Skip to modify menu"  << std::endl << std::endl;
+        std::cout << "                - Enter  wq<Enter>              Save and quit"        << std::endl << std::endl;
+        std::cout << "          ----------------------------------------------------------" << std::endl << std::endl;
         getline(std::cin, command);
 
         if      (command == "Display" || command == "display"){
@@ -36,18 +38,21 @@ std::string View::MainMenu   (ControllerCLI& Controller){
 }
 // 显示菜单
 std::string View::DisplayMenu(ControllerCLI& Controller){
-    std::cout << "          ----------------Display Whatever You Need!----------------" << std::endl << std::endl;
-    std::cout << "                - Enter  Face<Enter>              Data about Faces" << std::endl << std::endl;
-    std::cout << "                - Enter  Line<Enter>              Data about Lines" << std::endl << std::endl;
-    std::cout << "                - Enter  Total<Enter>             Statistical data" << std::endl << std::endl;
     std::string command {};
     while (command != "wq"){
+        std::cout << "          ----------------Display Whatever You Need!----------------"     << std::endl << std::endl;
+        std::cout << "                - Enter  Face<Enter>              Data about Faces"       << std::endl << std::endl;
+        std::cout << "                - Enter  Line<Enter>              Data about Lines"       << std::endl << std::endl;
+        std::cout << "                - Enter  Total<Enter>             Statistical data"       << std::endl << std::endl;
+        std::cout << "                - Enter  wq<Enter>                Return to main menu."   << std::endl << std::endl;
+        std::cout << "          ----------------------------------------------------------"     << std::endl << std::endl;
+
         getline(std::cin, command);
         // 和面相关的信息
         if (command == "Face"){
             std::cout << "          ----------------What about Faces do U want?----------------"            << std::endl << std::endl;
             std::cout << "                - Enter  ls<Enter>                List all info of all faces"     << std::endl << std::endl;
-            std::cout << "                - Enter  [idx]<Enter>             List info of face of No. idx"   << std::endl << std::endl;
+            std::cout << "                - Enter  ls [idx]<Enter>          List info of face of No. idx"   << std::endl << std::endl;
             command.clear();
             getline(std::cin, command);
             if (command.substr(0, 2) == "ls"){
@@ -137,21 +142,25 @@ std::string View::DisplayMenu(ControllerCLI& Controller){
                       << "Total area of all faces "    << info.FaceArea          << std::endl
                       << "Total length of all lines: " << info.LineLength        << std::endl;
         }
+        else if (command == "wq"){
+            break;
+        }
         else{
             std::cout << "command not found: " + command << std::endl;
         }
-        command.clear();
     }
-
+    return "Quit from display menu.";
 }
 // 修改菜单
 std::string View::ModifyMenu (ControllerCLI& Controller){
-    std::cout << "          ----------------Modify Whatever U Need!----------------"     << std::endl << std::endl;
-    std::cout << "                - Enter  Face<Enter>              Modify Faces"        << std::endl << std::endl;
-    std::cout << "                - Enter  Line<Enter>              Modify Lines"        << std::endl << std::endl;
-    std::cout << "                - Enter  wq<Enter>                Return to Main Menu" << std::endl << std::endl;
+    
     std::string command {};
     while (command != "wq"){
+        std::cout << "          ----------------Modify Whatever U Need!----------------"     << std::endl << std::endl;
+        std::cout << "                - Enter  Face<Enter>              Modify Faces"        << std::endl << std::endl;
+        std::cout << "                - Enter  Line<Enter>              Modify Lines"        << std::endl << std::endl;
+        std::cout << "                - Enter  wq<Enter>                Return to Main Menu" << std::endl << std::endl;
+        std::cout << "          --------------------------------------------------------"     << std::endl << std::endl;
         command.clear();
         getline(std::cin, command);
         if (command == "Face"){
@@ -232,7 +241,7 @@ std::string View::ModifyMenu (ControllerCLI& Controller){
         // 这一段代码和面的代码基本长得一模一样，设计有待提升
         else if (command == "Line"){
             std::cout << "          ----------------How do you want to modify?----------------"                                             << std::endl << std::endl;
-            std::cout << " - Enter  Add [x1] [y1] [z1] [x2] [y2] [z2] [x3] [y3] [z3]<Enter>             Add a new line."                    << std::endl << std::endl;
+            std::cout << " - Enter  Add [x1] [y1] [z1] [x2] [y2] [z2]<Enter>                            Add a new line."                    << std::endl << std::endl;
             std::cout << " - Enter  Delete [idx]<Enter>                                                 Delete idx line."                   << std::endl << std::endl;
             std::cout << " - Enter  Modify [idx1] [idx2] [x] [y] [z]<Enter>                             Modify idx2 point of idx1 line."    << std::endl << std::endl;
             std::cout << " - Enter  wq<Enter>                                                           Return to Modify Menu"              << std::endl << std::endl;

@@ -18,10 +18,11 @@ ExceptionNoLinesFound::ExceptionNoLinesFound() : std::invalid_argument("No line 
 
 
 // 从给定的文件中创建模型的相关信息
-ControllerBase::ControllerBase(const std::string& FileName){
-    m_FileName = FileName;
-    if (m_FileName.length() > 3 && 
-        m_FileName.substr(m_FileName.length() - 3) == std::string("obj")){
+ControllerBase::ControllerBase(const std::string& FileName) : m_FileName(FileName), m_ptrModel(nullptr){
+    // m_FileName = FileName;
+    std::string format = m_FileName.substr(m_FileName.length() - 3);
+    if (// m_FileName.length() > 3 && 
+        format == std::string("obj")){
 
         m_ptrModel = std::shared_ptr<objModel>(new objModel);   // ModelBase指针指向objModel
         m_ptrModel->ImportModelFromFile(m_FileName);            // 使用基类指针调用虚函数，会调用派生类的实现
@@ -46,9 +47,9 @@ ControllerBase::~ControllerBase(){
     // else if (未来如果支持新的三维模型格式，请在这里加入分析格式的条件){
     // 
     // }
-    else{
-        throw ExceptionUnsupportedFormat();
-    }
+    // else{
+        // throw ExceptionUnsupportedFormat();
+    // }
 }
 
      

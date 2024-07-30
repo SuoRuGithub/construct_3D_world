@@ -53,13 +53,13 @@ void objModel::ImportModelFromFile(const std::string& FileName){
             case '#':
                 break;
             case 'g':{                  // 使用{}声明变量作用域，否则报错
-                // 吃掉空格
-                LineString >> type;
+                // 吃掉空格（错啦！）
+                // LineString >> type;
                 LineString >> m_Name;
                 break;
             }
             case 'v':{
-                LineString >> type;
+                // LineString >> type;
                 double x = 0.0;
                 double y = 0.0;
                 double z = 0.0;
@@ -71,7 +71,7 @@ void objModel::ImportModelFromFile(const std::string& FileName){
                 break;
             }
             case 'l':{
-                LineString >> type;
+                // LineString >> type;
                 int idx1 = 0;
                 int idx2 = 0;
                 LineString >> idx1;
@@ -81,7 +81,7 @@ void objModel::ImportModelFromFile(const std::string& FileName){
                 break;
             }
             case 'f':{
-                LineString >> type;
+                // LineString >> type;
                 int idx1 = 0;
                 int idx2 = 0;
                 int idx3 = 0;
