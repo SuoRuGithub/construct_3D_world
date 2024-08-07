@@ -150,33 +150,6 @@ Controller/ControllerBase.cpp.s:
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/Controller/ControllerBase.cpp.s
 .PHONY : Controller/ControllerBase.cpp.s
 
-Controller/ControllerCLI.o: Controller/ControllerCLI.cpp.o
-
-.PHONY : Controller/ControllerCLI.o
-
-# target to build an object file
-Controller/ControllerCLI.cpp.o:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/Controller/ControllerCLI.cpp.o
-.PHONY : Controller/ControllerCLI.cpp.o
-
-Controller/ControllerCLI.i: Controller/ControllerCLI.cpp.i
-
-.PHONY : Controller/ControllerCLI.i
-
-# target to preprocess a source file
-Controller/ControllerCLI.cpp.i:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/Controller/ControllerCLI.cpp.i
-.PHONY : Controller/ControllerCLI.cpp.i
-
-Controller/ControllerCLI.s: Controller/ControllerCLI.cpp.s
-
-.PHONY : Controller/ControllerCLI.s
-
-# target to generate assembly for a file
-Controller/ControllerCLI.cpp.s:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/Controller/ControllerCLI.cpp.s
-.PHONY : Controller/ControllerCLI.cpp.s
-
 Model/Element3D.o: Model/Element3D.cpp.o
 
 .PHONY : Model/Element3D.o
@@ -258,32 +231,32 @@ Model/Line3D.cpp.s:
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/Model/Line3D.cpp.s
 .PHONY : Model/Line3D.cpp.s
 
-Model/ModelBase.o: Model/ModelBase.cpp.o
+Model/Model3D.o: Model/Model3D.cpp.o
 
-.PHONY : Model/ModelBase.o
+.PHONY : Model/Model3D.o
 
 # target to build an object file
-Model/ModelBase.cpp.o:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/Model/ModelBase.cpp.o
-.PHONY : Model/ModelBase.cpp.o
+Model/Model3D.cpp.o:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/Model/Model3D.cpp.o
+.PHONY : Model/Model3D.cpp.o
 
-Model/ModelBase.i: Model/ModelBase.cpp.i
+Model/Model3D.i: Model/Model3D.cpp.i
 
-.PHONY : Model/ModelBase.i
+.PHONY : Model/Model3D.i
 
 # target to preprocess a source file
-Model/ModelBase.cpp.i:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/Model/ModelBase.cpp.i
-.PHONY : Model/ModelBase.cpp.i
+Model/Model3D.cpp.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/Model/Model3D.cpp.i
+.PHONY : Model/Model3D.cpp.i
 
-Model/ModelBase.s: Model/ModelBase.cpp.s
+Model/Model3D.s: Model/Model3D.cpp.s
 
-.PHONY : Model/ModelBase.s
+.PHONY : Model/Model3D.s
 
 # target to generate assembly for a file
-Model/ModelBase.cpp.s:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/Model/ModelBase.cpp.s
-.PHONY : Model/ModelBase.cpp.s
+Model/Model3D.cpp.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/Model/Model3D.cpp.s
+.PHONY : Model/Model3D.cpp.s
 
 Model/Point3D.o: Model/Point3D.cpp.o
 
@@ -312,32 +285,32 @@ Model/Point3D.cpp.s:
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/Model/Point3D.cpp.s
 .PHONY : Model/Point3D.cpp.s
 
-Model/objModel.o: Model/objModel.cpp.o
+Model/Vector3D.o: Model/Vector3D.cpp.o
 
-.PHONY : Model/objModel.o
+.PHONY : Model/Vector3D.o
 
 # target to build an object file
-Model/objModel.cpp.o:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/Model/objModel.cpp.o
-.PHONY : Model/objModel.cpp.o
+Model/Vector3D.cpp.o:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/Model/Vector3D.cpp.o
+.PHONY : Model/Vector3D.cpp.o
 
-Model/objModel.i: Model/objModel.cpp.i
+Model/Vector3D.i: Model/Vector3D.cpp.i
 
-.PHONY : Model/objModel.i
+.PHONY : Model/Vector3D.i
 
 # target to preprocess a source file
-Model/objModel.cpp.i:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/Model/objModel.cpp.i
-.PHONY : Model/objModel.cpp.i
+Model/Vector3D.cpp.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/Model/Vector3D.cpp.i
+.PHONY : Model/Vector3D.cpp.i
 
-Model/objModel.s: Model/objModel.cpp.s
+Model/Vector3D.s: Model/Vector3D.cpp.s
 
-.PHONY : Model/objModel.s
+.PHONY : Model/Vector3D.s
 
 # target to generate assembly for a file
-Model/objModel.cpp.s:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/Model/objModel.cpp.s
-.PHONY : Model/objModel.cpp.s
+Model/Vector3D.cpp.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/Model/Vector3D.cpp.s
+.PHONY : Model/Vector3D.cpp.s
 
 View/View.o: View/View.cpp.o
 
@@ -405,9 +378,6 @@ help:
 	@echo "... Controller/ControllerBase.o"
 	@echo "... Controller/ControllerBase.i"
 	@echo "... Controller/ControllerBase.s"
-	@echo "... Controller/ControllerCLI.o"
-	@echo "... Controller/ControllerCLI.i"
-	@echo "... Controller/ControllerCLI.s"
 	@echo "... Model/Element3D.o"
 	@echo "... Model/Element3D.i"
 	@echo "... Model/Element3D.s"
@@ -417,15 +387,15 @@ help:
 	@echo "... Model/Line3D.o"
 	@echo "... Model/Line3D.i"
 	@echo "... Model/Line3D.s"
-	@echo "... Model/ModelBase.o"
-	@echo "... Model/ModelBase.i"
-	@echo "... Model/ModelBase.s"
+	@echo "... Model/Model3D.o"
+	@echo "... Model/Model3D.i"
+	@echo "... Model/Model3D.s"
 	@echo "... Model/Point3D.o"
 	@echo "... Model/Point3D.i"
 	@echo "... Model/Point3D.s"
-	@echo "... Model/objModel.o"
-	@echo "... Model/objModel.i"
-	@echo "... Model/objModel.s"
+	@echo "... Model/Vector3D.o"
+	@echo "... Model/Vector3D.i"
+	@echo "... Model/Vector3D.s"
 	@echo "... View/View.o"
 	@echo "... View/View.i"
 	@echo "... View/View.s"

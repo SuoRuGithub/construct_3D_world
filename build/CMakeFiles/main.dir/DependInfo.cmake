@@ -5,13 +5,12 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/zzpku/myCode/OOP/Construct3DWorld/Controller/ControllerBase.cpp" "/home/zzpku/myCode/OOP/Construct3DWorld/build/CMakeFiles/main.dir/Controller/ControllerBase.cpp.o"
-  "/home/zzpku/myCode/OOP/Construct3DWorld/Controller/ControllerCLI.cpp" "/home/zzpku/myCode/OOP/Construct3DWorld/build/CMakeFiles/main.dir/Controller/ControllerCLI.cpp.o"
   "/home/zzpku/myCode/OOP/Construct3DWorld/Model/Element3D.cpp" "/home/zzpku/myCode/OOP/Construct3DWorld/build/CMakeFiles/main.dir/Model/Element3D.cpp.o"
   "/home/zzpku/myCode/OOP/Construct3DWorld/Model/Face3D.cpp" "/home/zzpku/myCode/OOP/Construct3DWorld/build/CMakeFiles/main.dir/Model/Face3D.cpp.o"
   "/home/zzpku/myCode/OOP/Construct3DWorld/Model/Line3D.cpp" "/home/zzpku/myCode/OOP/Construct3DWorld/build/CMakeFiles/main.dir/Model/Line3D.cpp.o"
-  "/home/zzpku/myCode/OOP/Construct3DWorld/Model/ModelBase.cpp" "/home/zzpku/myCode/OOP/Construct3DWorld/build/CMakeFiles/main.dir/Model/ModelBase.cpp.o"
+  "/home/zzpku/myCode/OOP/Construct3DWorld/Model/Model3D.cpp" "/home/zzpku/myCode/OOP/Construct3DWorld/build/CMakeFiles/main.dir/Model/Model3D.cpp.o"
   "/home/zzpku/myCode/OOP/Construct3DWorld/Model/Point3D.cpp" "/home/zzpku/myCode/OOP/Construct3DWorld/build/CMakeFiles/main.dir/Model/Point3D.cpp.o"
-  "/home/zzpku/myCode/OOP/Construct3DWorld/Model/objModel.cpp" "/home/zzpku/myCode/OOP/Construct3DWorld/build/CMakeFiles/main.dir/Model/objModel.cpp.o"
+  "/home/zzpku/myCode/OOP/Construct3DWorld/Model/Vector3D.cpp" "/home/zzpku/myCode/OOP/Construct3DWorld/build/CMakeFiles/main.dir/Model/Vector3D.cpp.o"
   "/home/zzpku/myCode/OOP/Construct3DWorld/View/View.cpp" "/home/zzpku/myCode/OOP/Construct3DWorld/build/CMakeFiles/main.dir/View/View.cpp.o"
   "/home/zzpku/myCode/OOP/Construct3DWorld/main.cpp" "/home/zzpku/myCode/OOP/Construct3DWorld/build/CMakeFiles/main.dir/main.cpp.o"
   )

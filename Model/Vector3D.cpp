@@ -10,8 +10,11 @@ Vector3D::Vector3D(double x, double y, double z) : m_Point(x, y, z){
 // 提供一个点的引用构造一个向量对象
 Vector3D::Vector3D(Point3D& Point) : m_Point(Point){
 }
-// 析构函数
-Vector3D::~Vector3D(){
+// 拷贝构造
+Vector3D::Vector3D(const Vector3D& AVector) : m_Point(AVector.Point){
+}
+const Vector3D& Vector3D::operator=(const Vector3D& AVector){
+    m_Point = AVector.Point;
 }
 
 /* non-static getters */
@@ -23,6 +26,9 @@ double Vector3D::GetArea() const{
 
 // 计算向量的l2范数的长度
 double Vector3D::GetLength() const{
+    return GetL2Norm();    
+}
+double Vector3D::GetL2Norm() const{
     return Point3D::Distance(Point3D(0.0, 0.0, 0.0), m_Point);
 }
     

@@ -7,19 +7,8 @@ CMakeFiles/main.dir/Controller/ControllerBase.cpp.o
  /home/zzpku/myCode/OOP/Construct3DWorld/Model/Element3D.hpp
  /home/zzpku/myCode/OOP/Construct3DWorld/Model/Face3D.hpp
  /home/zzpku/myCode/OOP/Construct3DWorld/Model/Line3D.hpp
- /home/zzpku/myCode/OOP/Construct3DWorld/Model/ModelBase.hpp
+ /home/zzpku/myCode/OOP/Construct3DWorld/Model/Model3D.hpp
  /home/zzpku/myCode/OOP/Construct3DWorld/Model/Point3D.hpp
- /home/zzpku/myCode/OOP/Construct3DWorld/Model/objModel.hpp
-CMakeFiles/main.dir/Controller/ControllerCLI.cpp.o
- /home/zzpku/myCode/OOP/Construct3DWorld/Controller/ControllerBase.hpp
- /home/zzpku/myCode/OOP/Construct3DWorld/Controller/ControllerCLI.cpp
- /home/zzpku/myCode/OOP/Construct3DWorld/Controller/ControllerCLI.hpp
- /home/zzpku/myCode/OOP/Construct3DWorld/Model/Element3D.hpp
- /home/zzpku/myCode/OOP/Construct3DWorld/Model/Face3D.hpp
- /home/zzpku/myCode/OOP/Construct3DWorld/Model/Line3D.hpp
- /home/zzpku/myCode/OOP/Construct3DWorld/Model/ModelBase.hpp
- /home/zzpku/myCode/OOP/Construct3DWorld/Model/Point3D.hpp
- /home/zzpku/myCode/OOP/Construct3DWorld/Model/objModel.hpp
 CMakeFiles/main.dir/Model/Element3D.cpp.o
  /home/zzpku/myCode/OOP/Construct3DWorld/Model/Element3D.cpp
  /home/zzpku/myCode/OOP/Construct3DWorld/Model/Element3D.hpp
@@ -34,33 +23,29 @@ CMakeFiles/main.dir/Model/Line3D.cpp.o
  /home/zzpku/myCode/OOP/Construct3DWorld/Model/Line3D.cpp
  /home/zzpku/myCode/OOP/Construct3DWorld/Model/Line3D.hpp
  /home/zzpku/myCode/OOP/Construct3DWorld/Model/Point3D.hpp
-CMakeFiles/main.dir/Model/ModelBase.cpp.o
+CMakeFiles/main.dir/Model/Model3D.cpp.o
  /home/zzpku/myCode/OOP/Construct3DWorld/Model/Element3D.hpp
  /home/zzpku/myCode/OOP/Construct3DWorld/Model/Face3D.hpp
  /home/zzpku/myCode/OOP/Construct3DWorld/Model/Line3D.hpp
- /home/zzpku/myCode/OOP/Construct3DWorld/Model/ModelBase.cpp
- /home/zzpku/myCode/OOP/Construct3DWorld/Model/ModelBase.hpp
+ /home/zzpku/myCode/OOP/Construct3DWorld/Model/Model3D.cpp
+ /home/zzpku/myCode/OOP/Construct3DWorld/Model/Model3D.hpp
  /home/zzpku/myCode/OOP/Construct3DWorld/Model/Point3D.hpp
 CMakeFiles/main.dir/Model/Point3D.cpp.o
  /home/zzpku/myCode/OOP/Construct3DWorld/Model/Point3D.cpp
  /home/zzpku/myCode/OOP/Construct3DWorld/Model/Point3D.hpp
-CMakeFiles/main.dir/Model/objModel.cpp.o
+CMakeFiles/main.dir/Model/Vector3D.cpp.o
  /home/zzpku/myCode/OOP/Construct3DWorld/Model/Element3D.hpp
- /home/zzpku/myCode/OOP/Construct3DWorld/Model/Face3D.hpp
- /home/zzpku/myCode/OOP/Construct3DWorld/Model/Line3D.hpp
- /home/zzpku/myCode/OOP/Construct3DWorld/Model/ModelBase.hpp
  /home/zzpku/myCode/OOP/Construct3DWorld/Model/Point3D.hpp
- /home/zzpku/myCode/OOP/Construct3DWorld/Model/objModel.cpp
- /home/zzpku/myCode/OOP/Construct3DWorld/Model/objModel.hpp
+ /home/zzpku/myCode/OOP/Construct3DWorld/Model/Vector3D.cpp
+ /home/zzpku/myCode/OOP/Construct3DWorld/Model/Vector3D.hpp
 CMakeFiles/main.dir/View/View.cpp.o
  /home/zzpku/myCode/OOP/Construct3DWorld/Controller/ControllerBase.hpp
  /home/zzpku/myCode/OOP/Construct3DWorld/Controller/ControllerCLI.hpp
  /home/zzpku/myCode/OOP/Construct3DWorld/Model/Element3D.hpp
  /home/zzpku/myCode/OOP/Construct3DWorld/Model/Face3D.hpp
  /home/zzpku/myCode/OOP/Construct3DWorld/Model/Line3D.hpp
- /home/zzpku/myCode/OOP/Construct3DWorld/Model/ModelBase.hpp
+ /home/zzpku/myCode/OOP/Construct3DWorld/Model/Model3D.hpp
  /home/zzpku/myCode/OOP/Construct3DWorld/Model/Point3D.hpp
- /home/zzpku/myCode/OOP/Construct3DWorld/Model/objModel.hpp
  /home/zzpku/myCode/OOP/Construct3DWorld/View/View.cpp
  /home/zzpku/myCode/OOP/Construct3DWorld/View/View.hpp
 CMakeFiles/main.dir/main.cpp.o
@@ -69,8 +54,7 @@ CMakeFiles/main.dir/main.cpp.o
  /home/zzpku/myCode/OOP/Construct3DWorld/Model/Element3D.hpp
  /home/zzpku/myCode/OOP/Construct3DWorld/Model/Face3D.hpp
  /home/zzpku/myCode/OOP/Construct3DWorld/Model/Line3D.hpp
- /home/zzpku/myCode/OOP/Construct3DWorld/Model/ModelBase.hpp
+ /home/zzpku/myCode/OOP/Construct3DWorld/Model/Model3D.hpp
  /home/zzpku/myCode/OOP/Construct3DWorld/Model/Point3D.hpp
- /home/zzpku/myCode/OOP/Construct3DWorld/Model/objModel.hpp
  /home/zzpku/myCode/OOP/Construct3DWorld/View/View.hpp
  /home/zzpku/myCode/OOP/Construct3DWorld/main.cpp

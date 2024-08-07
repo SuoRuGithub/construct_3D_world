@@ -20,8 +20,8 @@ public:
     // 提供一个点的引用构造一个向量对象
     Vector3D(Point3D& Point);
     // 对向量并不要求不能重复（比如说两个不相同的平面完全可以拥有相同的法向量）
-    Vector3D(const Vector3D& Vector);
-    const Vector3D& operator=(const Vector3D& Vector);
+    Vector3D(const Vector3D& AVector);
+    const Vector3D& operator=(const Vector3D& AVector);
     // 析构函数
     ~Vector3D();
 
@@ -30,9 +30,10 @@ public:
     // 计算向量的面积（直接返回0）
     double GetArea() const override;
 
-    // 计算向量的l2范数的长度
+    // 计算向量的长度定义为其L2范数
     double GetLength() const override;
     
+    double GetL2Norm() const; 
     // 计算这个向量与另一个向量的内积
     double InnerProduct(const Vector3D& AVector) const;
 
@@ -42,7 +43,8 @@ public:
     /* non-static setters*/
     
     // 修改向量的对应的某个点，如果希望删除的点并不是这个线段的端点，则抛出异常
-    void SetPoint(PointPtr ptrPoint, double x, double y, double z)override;
+    void SetPoint(PointPtr ptrPoint, double x, double y, double z) override;
+    void SetPoint(int PointIdx, double x, double y, double z) override;
     
     // 对当前的向量进行归一化
     void Normalize();
