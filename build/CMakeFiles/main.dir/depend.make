@@ -33,6 +33,11 @@ CMakeFiles/main.dir/Model/Model3D.cpp.o: ../Model/Point3D.hpp
 CMakeFiles/main.dir/Model/Point3D.cpp.o: ../Model/Point3D.cpp
 CMakeFiles/main.dir/Model/Point3D.cpp.o: ../Model/Point3D.hpp
 
+CMakeFiles/main.dir/Model/Vector3D.cpp.o: ../Model/Element3D.hpp
+CMakeFiles/main.dir/Model/Vector3D.cpp.o: ../Model/Point3D.hpp
+CMakeFiles/main.dir/Model/Vector3D.cpp.o: ../Model/Vector3D.cpp
+CMakeFiles/main.dir/Model/Vector3D.cpp.o: ../Model/Vector3D.hpp
+
 CMakeFiles/main.dir/View/View.cpp.o: ../Controller/ControllerBase.hpp
 CMakeFiles/main.dir/View/View.cpp.o: ../Controller/ControllerCLI.hpp
 CMakeFiles/main.dir/View/View.cpp.o: ../Model/Element3D.hpp

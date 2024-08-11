@@ -285,6 +285,33 @@ Model/Point3D.cpp.s:
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/Model/Point3D.cpp.s
 .PHONY : Model/Point3D.cpp.s
 
+Model/Vector3D.o: Model/Vector3D.cpp.o
+
+.PHONY : Model/Vector3D.o
+
+# target to build an object file
+Model/Vector3D.cpp.o:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/Model/Vector3D.cpp.o
+.PHONY : Model/Vector3D.cpp.o
+
+Model/Vector3D.i: Model/Vector3D.cpp.i
+
+.PHONY : Model/Vector3D.i
+
+# target to preprocess a source file
+Model/Vector3D.cpp.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/Model/Vector3D.cpp.i
+.PHONY : Model/Vector3D.cpp.i
+
+Model/Vector3D.s: Model/Vector3D.cpp.s
+
+.PHONY : Model/Vector3D.s
+
+# target to generate assembly for a file
+Model/Vector3D.cpp.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/Model/Vector3D.cpp.s
+.PHONY : Model/Vector3D.cpp.s
+
 View/View.o: View/View.cpp.o
 
 .PHONY : View/View.o
@@ -366,6 +393,9 @@ help:
 	@echo "... Model/Point3D.o"
 	@echo "... Model/Point3D.i"
 	@echo "... Model/Point3D.s"
+	@echo "... Model/Vector3D.o"
+	@echo "... Model/Vector3D.i"
+	@echo "... Model/Vector3D.s"
 	@echo "... View/View.o"
 	@echo "... View/View.i"
 	@echo "... View/View.s"
