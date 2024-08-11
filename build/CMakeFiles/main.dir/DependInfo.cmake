@@ -10,7 +10,6 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/zzpku/myCode/OOP/Construct3DWorld/Model/Line3D.cpp" "/home/zzpku/myCode/OOP/Construct3DWorld/build/CMakeFiles/main.dir/Model/Line3D.cpp.o"
   "/home/zzpku/myCode/OOP/Construct3DWorld/Model/Model3D.cpp" "/home/zzpku/myCode/OOP/Construct3DWorld/build/CMakeFiles/main.dir/Model/Model3D.cpp.o"
   "/home/zzpku/myCode/OOP/Construct3DWorld/Model/Point3D.cpp" "/home/zzpku/myCode/OOP/Construct3DWorld/build/CMakeFiles/main.dir/Model/Point3D.cpp.o"
-  "/home/zzpku/myCode/OOP/Construct3DWorld/Model/Vector3D.cpp" "/home/zzpku/myCode/OOP/Construct3DWorld/build/CMakeFiles/main.dir/Model/Vector3D.cpp.o"
   "/home/zzpku/myCode/OOP/Construct3DWorld/View/View.cpp" "/home/zzpku/myCode/OOP/Construct3DWorld/build/CMakeFiles/main.dir/View/View.cpp.o"
   "/home/zzpku/myCode/OOP/Construct3DWorld/main.cpp" "/home/zzpku/myCode/OOP/Construct3DWorld/build/CMakeFiles/main.dir/main.cpp.o"
   )

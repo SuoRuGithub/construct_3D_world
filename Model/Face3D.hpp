@@ -22,21 +22,22 @@ using PointPtr      = std::shared_ptr<Point3D>;
 【功能】                表示三维空间中的一个面，由Element3D派生而来
 【接口说明】            - 删除默认构造函数，提供带参数的构造函数、拷贝构造函数和
                           赋值运算符的重载
-                        - void SetCoordinates(double, double, double)修改点的坐标
+                        - void SetCoordinates(double, double, double)修改点的坐
+                          标
                         - const double& x, y, z 该点三个坐标的常引用
                         - 重载 == 运算符，用来判断空间中的两点是否重合
                         - double Distance(const Point3D)返回另一个点到该点的距离 
-                        - bool IsCoincide(const Point3D, double)与 == 功能相同，但
-                          是可以自定义精度
-                        - bool IsCollinear(const Point3D&, const Point3D&, const 
+                        - bool IsCoincide(const Point3D, double)与 == 功能相同，
+                          但是可以自定义精度
+                        - bool IsCollinear(const Point3D&, const Point3D&,const 
                           Point3D&)判断三点是否共线
                         - double Distance(const Point3D&, const Poiont3D&)返回两
                           点之间的距离
-                        - bool IsCoincide(const Point3D&, const Point3D&, double)
-                          给定两点引用，判断是否共线，可以指定精度
-                        - bool IsCoincide(const Point3D&, double, double, double,
-                          double)给定一点引用和另一点坐标，判断是否共线，可以指定
-                          精度
+                        - bool IsCoincide(const Point3D&, const Point3D&,
+                          double)给定两点引用，判断是否共线，可以指定精度
+                        - bool IsCoincide(const Point3D&, double, double, 
+                          double, double)给定一点引用和另一点坐标，判断是否
+                          共线，可以指定精度
 【开发者及日期】        张章 2024-7-21
 【更改记录】            24-8-2 增加了注释
 *************************************************************************/
@@ -46,8 +47,8 @@ public:
     Face3D() = delete;
     // 提供三个点的引用构造一个面对象
     Face3D(const Point3D& PointA, const Point3D& PointB, const Point3D& PointC);
-    // 删除拷贝构造函数和赋值运算符重载，但是定义移动构造函数和移动赋值运算符重载
-    // 保证不允许出现重复元素，只可以转移对象
+    // 删除拷贝构造函数和赋值运算符重载，但是定义移动构造函数和移动赋值运算符
+    // 重载保证不允许出现重复元素，只可以转移对象
     Face3D(const Face3D&)            = delete;
     Face3D& operator=(const Face3D&) = delete;
     Face3D(Face3D&& AFace);

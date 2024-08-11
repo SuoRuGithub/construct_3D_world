@@ -16,20 +16,29 @@
 class Point3D;  // 前向声明
 using PointPtr = std::shared_ptr<Point3D>;
 
+
 /****************************异常类****************************************
 【类名】                    ExceptionInvalidCoordinates
-【功能模块和目的】          提供的坐标非法
-
-【类名】                    ExceptionIndexOutOfRange
-【功能模块和目的】          给出的索引超出范围
-
-【开发者及日期】            张章 2024-7-21
-【更改记录】                24-8-2增加了注释
+【功能模块和目的】          当提供的坐标无效时抛出此异常，用于处理不合法的坐
+                            标数据
+【接口说明】               继承自 std::invalid_argument，提供构造函数用于初始
+                           化异常信息
+【开发者及日期】          张章 2024-7-31
+【更改记录】                无
 *************************************************************************/
 class ExceptionInvalidCoordinates : public std::invalid_argument{
 public:
     ExceptionInvalidCoordinates();
 };
+
+/****************************异常类****************************************
+【类名】                    ExceptionIndexOutOfRange
+【功能模块和目的】          当索引超出有效范围时抛出此异常，用于处理索引越界问题
+【接口说明】               继承自 std::invalid_argument，提供构造函数用于初始
+                           化异常信息
+【开发者及日期】          张章 2024-7-31
+【更改记录】                无
+*************************************************************************/
 class ExceptionIndexOutOfRange : public std::invalid_argument{
 public:
     ExceptionIndexOutOfRange();
@@ -41,21 +50,23 @@ public:
 【功能】                表示三维空间中的一个点，可以作为向量、线段或面的成员
 【接口说明】            - 删除默认构造函数，提供带参数的构造函数、拷贝构造函数和
                           赋值运算符的重载
-                        - void SetCoordinates(double, double, double)修改点的坐标
+                        - void SetCoordinates(double, double, double)修改点
+                          的坐标
                         - const double& x, y, z 该点三个坐标的常引用
                         - 重载 == 运算符，用来判断空间中的两点是否重合
-                        - double Distance(const Point3D)返回另一个点到该点的距离 
-                        - bool IsCoincide(const Point3D, double)与 == 功能相同，但
-                          是可以自定义精度
-                        - bool IsCollinear(const Point3D&, const Point3D&, const 
-                          Point3D&)判断三点是否共线
+                        - double Distance(const Point3D)返回另一个点到该点
+                          的距离 
+                        - bool IsCoincide(const Point3D, double)与 == 功能相同
+                          ，但是可以自定义精度
+                        - bool IsCollinear(const Point3D&, const Point3D&, 
+                          const Point3D&)判断三点是否共线
                         - double Distance(const Point3D&, const Poiont3D&)返回两
                           点之间的距离
-                        - bool IsCoincide(const Point3D&, const Point3D&, double)
-                          给定两点引用，判断是否共线，可以指定精度
-                        - bool IsCoincide(const Point3D&, double, double, double,
-                          double)给定一点引用和另一点坐标，判断是否共线，可以指定
-                          精度
+                        - bool IsCoincide(const Point3D&, const Point3D&, 
+                          double)给定两点引用，判断是否共线，可以指定精度
+                        - bool IsCoincide(const Point3D&, double, double, 
+                          double, double)给定一点引用和另一点坐标，判断是否
+                          共线，可以指定精度
 【开发者及日期】        张章 2024-7-21
 【更改记录】            24-8-2 增加了注释
 *************************************************************************/
@@ -102,8 +113,12 @@ public:
     static double Distance(const Point3D& PointA, const Point3D& PointB);
 
     // 判断两个点是否重合
-    static bool IsCoincide(const Point3D& PointA, const Point3D& PointB, double precision = 1e-5);
-    static bool IsCoincide(const Point3D& PointA, double x, double y, double z, double precision = 1e-5);
+    static bool IsCoincide(const Point3D& PointA, 
+                           const Point3D& PointB, double precision = 1e-5);
+
+    // 判断三个点是否共线
+    static bool IsCoincide(const Point3D& PointA, double x, double y, double z,
+                           double precision = 1e-5);
 
 private:
     // 当前点的坐标

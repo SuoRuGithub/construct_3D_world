@@ -16,20 +16,22 @@ using PointPtr = std::shared_ptr<Point3D>;
 
 /****************************异常类****************************************
 【类名】                    ExceptionPointsRepeated
-【功能模块和目的】          表示（线段或面的）点出现了重合的情况（用于SetPoint
-                            时将线段或面的点设置为重合的情况）
-
-【类名】                    ExceptionNotHavePoint
-【功能模块和目的】          表示当前元素并不包含给定的点（用于SetPoint中输入的
-                            点非法的情况）
-
-【开发者及日期】            张章 2024-7-21
-【更改记录】                24-8-5增加了注释
+【功能模块和目的】          当尝试设置重复的点时抛出此异常，用于处理点重合的情况
+【接口说明】               继承自 std::invalid_argument，提供默认构造函数
+【开发者及日期】            张章 2024-7-31
+【更改记录】                无
 *************************************************************************/
 class ExceptionPointsRepeated : public std::invalid_argument{
 public:
     ExceptionPointsRepeated();
 };
+/****************************异常类****************************************
+【类名】                    ExceptionNotHavePoint
+【功能模块和目的】          当尝试访问或修改不存在的点时抛出此异常，用于处理点不存在的情况
+【接口说明】               继承自 std::invalid_argument，提供默认构造函数
+【开发者及日期】            张章 2024-7-31
+【更改记录】                无
+*************************************************************************/
 class ExceptionNotHavePoint : public std::invalid_argument{
 public:
     ExceptionNotHavePoint();

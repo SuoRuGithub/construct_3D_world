@@ -21,49 +21,91 @@ using ModelPtr = std::shared_ptr<Model3D>;  // Model3D的指针
 // 设置这些结构体的合理性在于，虽然我们目前只支持format,fileName等简单选项，
 // 但是在未来可以通过扩展结构体来轻松扩展对Importer, Exporter 与 Renderer的
 // 设置。
+
+/*********************************************************************
+【结构体名】              ImporterConfig
+【功能】                  用于配置导入器的参数，包括模型指针、文件格式和文件路径
+【开发者及日期】          张章 2024-7-31
+【更改记录】              无
+*************************************************************************/
 struct ImporterConfig{
     ModelPtr     pmodel;     // 模型指针
     std::string  format;     // 导入的文件格式
     std::string  fileName;   // 导入的文件路径
 };
+/***********************************************************************
+【结构体名】              ExporterConfig
+【功能】                  用于配置导出器的参数，包括模型指针、文件格式和文件路径
+【开发者及日期】          张章 2024-7-31
+【更改记录】              无
+*************************************************************************/
 struct ExporterConfig{
     ModelPtr     pmodel;     // 模型指针
     std::string  format;     // 导出的文件格式
     std::string  fileName;   // 导出的文件路径
 };
+/****************************结构体****************************************
+【结构体名】              RendererConfig
+【功能】                  用于配置渲染器，本项目不包含渲染实现，此结构体作为接
+                          口完整性设计
+【开发者及日期】          张章 2024-7-31
+【更改记录】              无
+*************************************************************************/
 struct RendererConfig{
     // pass 本项目不包含渲染的相关实现，只是作为完整性设计了相关接口
 };
 
-/****************************异常类****************************************
+
+/***********************************************************************
 【类名】                    ExceptionFaceExist
-【功能模块和目的】          提供的面在模型中已经存在，会在与面的增删改功能相关的
-                            函数中使用
-
-【类名】                    ExceptionInvalidImporterConfig
-【功能模块和目的】          提供的Importer设置非法（如使用了不支持的格式，无法
-                            打开文件）
-
-【类名】                    ExceptionInvalidExporterConfig
-【功能模块和目的】          提供的Exporter设置非法（如使用了不支持的格式，无法
-                            打开文件）
-
-【开发者及日期】            张章 2024-7-25
-【更改记录】                24-8-6增加了注释
+【功能模块和目的】          当检测到面已经存在时抛出此异常，用于处理面重复的情况
+【接口说明】               继承自 std::invalid_argument，提供构造函数用于初始化
+                           异常信息
+【开发者及日期】            张章 2024-7-31
+【更改记录】                无
 *************************************************************************/
 class ExceptionFaceExist : public std::invalid_argument{
 public:
     ExceptionFaceExist();
 };
 
+/***********************************************************************
+【类名】                    ExceptionInvalidImporterConfig
+【功能模块和目的】          当导入器配置无效时抛出此异常，用于处理导入配置错误
+                            的情况
+【接口说明】               继承自 std::invalid_argument，提供构造函数用于初始
+                           化异常信息
+【开发者及日期】            张章 2024-7-31
+【更改记录】                无
+*************************************************************************/
 class ExceptionInvalidImporterConfig : public std::invalid_argument{
 public:
     ExceptionInvalidImporterConfig();
 };
+
+/***********************************************************************
+【类名】                    ExceptionInvalidExporterConfig
+【功能模块和目的】          当导出器配置无效时抛出此异常，用于处理导出配置错误
+                            的情况
+【接口说明】               继承自 std::invalid_argument，提供构造函数用于初
+                           始化异常信息
+【开发者及日期】            张章 2024-7-31
+【更改记录】                无
+*************************************************************************/
 class ExceptionInvalidExporterConfig : public std::invalid_argument{
 public:
     ExceptionInvalidExporterConfig();
 };
+
+/***********************************************************************
+【类名】                    ExceptionInvalidRendererConfig
+【功能模块和目的】          当渲染器配置无效时抛出此异常，用于处理渲染配置错误
+                            的情况
+【接口说明】               继承自 std::invalid_argument，提供构造函数用于初始
+                           化异常信息
+【开发者及日期】            张章 2024-7-31
+【更改记录】                无
+*************************************************************************/
 class ExceptionInvalidRendererConfig : public std::invalid_argument{
 public:
     ExceptionInvalidRendererConfig();
@@ -91,23 +133,37 @@ public:
 *************************************************************************/
 class Importer{
 public:
+    // 含参构造函数，传入模型指针，文件名，文件格式
     Importer(ModelPtr pmodel, std::string& fileName, std::string format);
+    // 含参构造函数，传入设置结构体
     Importer(ImporterConfig& config);
+    // 含参构造函数，传入模型指针，文件名. 文件格式通过文件名解析
     Importer(ModelPtr pmodel, std::string& fileName);
+    // 拷贝构造函数
     Importer(Importer& AImporter);
+    // 赋值运算符重载
     const Importer& operator=(const Importer& AImporter);
 
+    // 根据设置导入模型
     void ImportModel();
 
+    // 修改导入器设置
     void SetConfig(const ImporterConfig& config);
 
+    // 查看导入器设置
     const ImporterConfig& config {m_config};
 protected:
+    // 检查设置是否有效
     bool IsConfigAvailable();
+    // 导入obj模型
     void ImportobjModel();
-    std::string FormatFromPath(std::string fileName);   // 根据输入的文件路径得到文件格式
+    // 从文件路径解析格式
+    std::string FormatFromPath(std::string fileName);   
+    
+    // 导入器设置
     ImporterConfig m_config;
 };
+
 /*************************************************************************
 【类名】                Exporter
 【功能】                一个三维模型的导出器，可以根据给定的设置参数实现对三维
@@ -122,24 +178,38 @@ protected:
 *************************************************************************/
 class Exporter{
 public:
-    Exporter(const ModelPtr pmodel, const std::string& format, const std::string& fileName);
+    // 含参数的构造函数，传入模型指针，文件名，文件格式
+    Exporter(const ModelPtr pmodel, const std::string& format, 
+             const std::string& fileName);
+    // 含参数的构造函数，传入设置结构体
     Exporter(const ExporterConfig& config);
+    // 含参数的构造函数，传入模型指针，文件名. 文件格式通过文件名解析
     Exporter(const ModelPtr pmodel, const std::string& fileName);
+    // 拷贝构造函数
     Exporter(const Exporter& AExporter);
-
+    // 赋值运算符重载
     const Exporter& operator=(const Exporter& AExporter);
 
+    // 根据设置导出模型
     void ExportModel();
     
+    // 修改导出器设置
     void SetConfig(const ExporterConfig& config);
 
+    // 查看导出器设置
     const ExporterConfig& config {m_config};
 protected:
+    // 检查设置是否有效
     bool IsConfigAvailable();
+    // 导出obj模型
     void ExportAsobj();
+    // 从文件路径解析格式
     std::string FormatFromPath(std::string fileName);
+
+    // 导出器设置
     ExporterConfig m_config;
 };
+
 /*************************************************************************
 【类名】                Renderer
 【功能】                一个三维模型的渲染器，可以根据给定的设置参数实现对三维

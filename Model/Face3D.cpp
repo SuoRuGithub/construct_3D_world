@@ -41,6 +41,7 @@ Face3D::Face3D(const Point3D& PointA, const Point3D& PointB,
 Face3D::Face3D(Face3D&& AFace) 
     : m_PointA(AFace.PointA), m_PointB(AFace.PointB), m_PointC(AFace.PointC){
 }
+
 /*************************************************************************
 【函数名称】       operator=
 【函数功能】       Point3D类转移赋值运算符的重载
@@ -58,11 +59,16 @@ Face3D& Face3D::operator=(Face3D&& AFace){
     return *this;
 }
 
-// 析构函数
+/*************************************************************************
+【函数名称】       ~Face3D
+【函数功能】       Face3D的析构函数
+【参数】           无
+【返回值】         无
+【开发者及日期】   张章 2024-7-21
+【更改记录】       24-8-5增加了注释
+*************************************************************************/
 Face3D::~Face3D(){
 }
-
-
 
 /* non-static getters */
 /*************************************************************************
@@ -121,7 +127,9 @@ double Face3D::GetArea()    const{
 【更改记录】       24-8-5增加了注释
 *************************************************************************/
 double Face3D::GetLength()  const{
-    return Point3D::Distance(PointA, PointB) + Point3D::Distance(PointA, PointC) + Point3D::Distance(PointB, PointC);
+    return Point3D::Distance(PointA, PointB) + 
+           Point3D::Distance(PointA, PointC) + 
+           Point3D::Distance(PointB, PointC);
 }
 
 

@@ -15,23 +15,29 @@
 // 定义点的智能指针
 using PointPtr = std::shared_ptr<Point3D>;
 
-/****************************异常类****************************************
+/**********************************************************************
 【类名】                    ExceptionLineExist
-【功能模块和目的】          线已经存在
-
-【类名】                    ExceptionTargetLineNotExist
-【功能模块和目的】          目标线段不存在
-
-【开发者及日期】            张章 2024-7-21
-【更改记录】                24-8-5增加了注释
+【功能模块和目的】          当检测到线段已经存在时抛出此异常，用于处理线段重
+                            复的情况
+【接口说明】               继承自 std::invalid_argument，提供构造函数用于初始
+                           化异常信息
+【开发者及日期】            张章 2024-7-31
+【更改记录】                无
 *************************************************************************/
-// 已经存在相应线段
 class ExceptionLineExist : public std::invalid_argument{
 public:
     ExceptionLineExist();
 };
 
-// 线段不存在
+/**********************************************************************
+【类名】                    ExceptionTargetLineNotExist
+【功能模块和目的】          当目标线段不存在时抛出此异常，用于处理缺少目标线
+                            段的情况
+【接口说明】               继承自 std::invalid_argument，提供构造函数用于初
+                           始化异常信息
+【开发者及日期】            张章 2024-7-31
+【更改记录】                无
+*************************************************************************/
 class ExceptionTargetLineNotExist : public std::invalid_argument{
 public:
     ExceptionTargetLineNotExist();
@@ -41,7 +47,8 @@ public:
 /*************************************************************************
 【类名】                Line3D
 【功能】                表示三维空间的一条线段，由Element3D类继承而来
-【接口说明】            - 提供构造函数，移动构造函数和移动赋值运算符重载，删除拷贝
+【接口说明】            - 提供构造函数，移动构造函数和移动赋值运算符重载，
+                          删除拷贝
                           构造函数和赋值运算符重载
                         - 重载了 == 运算符
                         - 提供了GetArea接口返回线段面积（0）
@@ -57,14 +64,14 @@ public:
     Line3D() = delete;
     // 提供两个点的引用构造一个线段对象
     Line3D(Point3D& PointA, Point3D& PointB);
-    // 删除拷贝构造函数和赋值运算符重载，但是定义移动构造函数和移动赋值运算符重载
-    // 保证不允许出现重复元素，只可以转移对象
+    // 删除拷贝构造函数和赋值运算符重载，但是定义移动构造函数和移动赋值运算
+    // 符重载保证不允许出现重复元素，只可以转移对象
     Line3D(const Line3D& ALine) = delete;
     const Line3D& operator=(const Line3D& ALine) = delete;
     Line3D(Line3D&& ALine);
-    Line3D& operator=(Line3D&& ALine); // Note:移动赋值运算符和移动构造函数不可以只
-                                       // 提供常引用。移动赋值运算符重载不可以只
-                                       // 返回常引用
+    Line3D& operator=(Line3D&& ALine); // Note:移动赋值运算符和移动构造函数
+                                       // 不可以只提供常引用。移动赋值运算符
+                                       // 重载不可以返回常引用
     // 析构函数
     ~Line3D();
 
@@ -74,7 +81,7 @@ public:
     bool operator==(const Line3D& ALine)const;
 
     // 计算线段的面积（直接返回0）
-    double GetArea() const override;
+    double GetArea()   const override;
 
     // 计算线段的长度
     double GetLength() const override;

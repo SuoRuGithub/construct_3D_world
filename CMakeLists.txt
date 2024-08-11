@@ -7,4 +7,4 @@ aux_source_directory(./Model MODEL_LIST)
 aux_source_directory(./Controller CONTROLLER_LIST)
 aux_source_directory(./View VIEW_LIST)
 
-add_executable(main main.cpp ${MODEL_LIST} ${CONTROLLER_LIST} ${VIEW_LIST})
+add_executable(main main.cpp ${VIEW_LIST} ${CONTROLLER_LIST} ${MODEL_LIST} )

@@ -12,26 +12,51 @@
 using PointPtr = std::shared_ptr<Point3D>;
 
 /* 异常类 */
-ExceptionInvalidCoordinates::ExceptionInvalidCoordinates() : std::invalid_argument("Invalid Coordinates"){
+/***********************************************************************
+【类名】                    ExceptionInvalidCoordinates
+【功能模块和目的】          当提供的坐标数据无效或不符合预期格式时抛出此异常
+【接口说明】               继承自 std::invalid_argument，提供构造函数用于初始
+                            化异常信息
+【开发者及日期】          [开发者名称] [开发日期]
+【更改记录】                无
+*************************************************************************/
+ExceptionInvalidCoordinates::ExceptionInvalidCoordinates() 
+    : std::invalid_argument("Invalid Coordinates"){
 }
-ExceptionIndexOutOfRange::ExceptionIndexOutOfRange() : std::invalid_argument("Index oput of range"){
+/****************************异常类****************************************
+【类名】                    ExceptionIndexOutOfRange
+【功能模块和目的】          当索引超出预期范围或不符合有效值时抛出此异常
+【接口说明】               继承自 std::invalid_argument，提供构造函数用于初
+                           始化异常信息
+【开发者及日期】          [开发者名称] [开发日期]
+【更改记录】                无
+*************************************************************************/
+ExceptionIndexOutOfRange::ExceptionIndexOutOfRange() 
+    : std::invalid_argument("Index oput of range"){
+}
+
+/********************************************************************
+【类名】                    Point3D
+【功能模块和目的】          表示三维空间中的一个点，提供点的坐标及基本操作
+【接口说明】               提供构造函数、拷贝构造函数等，用于创建和复制点对象
+【开发者及日期】          [开发者名称] [开发日期]
+【更改记录】                无
+*************************************************************************/
+Point3D::Point3D(double x, double y, double z) : m_x(x), m_y(y), m_z(z){
 }
 
 /*************************************************************************
 【函数名称】       Point3D
-【函数功能】       Point3D类的含参构造函数与拷贝构造函数
-【参数】          【含参构造函数】
-                    - 输入参数：double x, double y, double z: 表示希望构造的点的
-                      坐标
-                  【拷贝构造函数】
-                    - 输入参数：const Point3D& APoint. 希望拷贝的点的引用
+【函数功能】       使用提供的坐标值初始化点对象
+【参数】           double x: 输入参数，点在x轴上的坐标
+【参数】           double y: 输入参数，点在y轴上的坐标
+【参数】           double z: 输入参数，点在z轴上的坐标
 【返回值】         无
-【开发者及日期】   张章 2024-7-21
-【更改记录】       24-8-2增加了注释
+【开发者及日期】  [开发者名称] [开发日期]
+【更改记录】       无
 *************************************************************************/
-Point3D::Point3D(double x, double y, double z) : m_x(x), m_y(y), m_z(z){
-}
-Point3D::Point3D(const Point3D& APoint) : m_x(APoint.x), m_y(APoint.y), m_z(APoint.z){
+Point3D::Point3D(const Point3D& APoint) 
+    : m_x(APoint.x), m_y(APoint.y), m_z(APoint.z){
 }
 
 /*************************************************************************
@@ -51,12 +76,17 @@ Point3D& Point3D::operator=(const Point3D& APoint){
     return *this;
     
 }
-// * 析构函数
+
+/*************************************************************************
+【函数名称】       ~Point3D
+【函数功能】       Point3D的析构函数
+【参数】          无 
+【返回值】        无 
+【开发者及日期】   张章 2024-7-21
+【更改记录】       24-8-2增加了注释
+*************************************************************************/
 Point3D::~Point3D(){
 }
-
-
-
 /* non-static setter*/
 /*************************************************************************
 【函数名称】       SetCoordinates
@@ -141,7 +171,9 @@ bool Point3D::IsCoincide(const Point3D& APoint, double precision) const{
 【开发者及日期】    张章 2024-7-21
 【更改记录】        24-8-5增加了注释
 *************************************************************************/
-bool Point3D::IsCollinear(const Point3D& PointA, const Point3D& PointB, const Point3D& PointC){
+bool Point3D::IsCollinear(const Point3D& PointA, 
+                          const Point3D& PointB, 
+                          const Point3D& PointC){
     // 无实现
     return false;
 }
@@ -171,7 +203,10 @@ double Point3D::Distance(const Point3D& PointA, const Point3D& PointB){
 【开发者及日期】   张章 2024-7-21
 【更改记录】       24-8-5增加了注释
 *************************************************************************/
-bool Point3D::IsCoincide(const Point3D& PointA, const Point3D& PointB, double precision /*= 1e-5*/){    // note that default parameters shouldn't be shown in definition.
+bool Point3D::IsCoincide(
+    const Point3D& PointA, const Point3D& PointB, double precision /*= 1e-5*/){
+    // note that default parameters shouldn't be shown in definition.
+
     if ((std::abs(PointA.x - PointB.x) < precision) && 
         (std::abs(PointA.y - PointB.y) < precision) &&
         (std::abs(PointA.z - PointB.z) < precision)){
@@ -192,6 +227,7 @@ bool Point3D::IsCoincide(const Point3D& PointA, const Point3D& PointB, double pr
 【开发者及日期】    张章 2024-7-21
 【更改记录】        24-8-5增加了注释
 *************************************************************************/
-bool Point3D::IsCoincide(const Point3D& PointA, double x, double y, double z, double precision){
+bool Point3D::IsCoincide(const Point3D& PointA, 
+                         double x, double y, double z, double precision){
     return Point3D::IsCoincide(PointA, Point3D(x, y, z), precision);
 }

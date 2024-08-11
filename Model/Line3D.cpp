@@ -8,11 +8,24 @@
 using PointPtr = std::shared_ptr<Point3D>;
  
 /* 异常类 */
-// 已经存在相应线段
+/***********************************************************************
+【类名】                    ExceptionLineExist
+【功能模块和目的】          当检测到尝试创建或修改的线段已经存在时抛出此异常
+【接口说明】               继承自 std::invalid_argument，提供默认构造函数
+【开发者及日期】            张章 2024-7-31
+【更改记录】                无
+*************************************************************************/
 ExceptionLineExist::ExceptionLineExist() 
     : std::invalid_argument("Line exists"){
 }
-// 线段不存在
+
+/***********************************************************************
+【类名】                    ExceptionTargetLineNotExist
+【功能模块和目的】          当检测到目标线段不存在时抛出此异常
+【接口说明】               继承自 std::invalid_argument，提供默认构造函数
+【开发者及日期】            张章 2024-7-31
+【更改记录】                无
+*************************************************************************/
 ExceptionTargetLineNotExist::ExceptionTargetLineNotExist() 
     : std::invalid_argument("Target line doesn't exist"){
 }
@@ -26,7 +39,8 @@ ExceptionTargetLineNotExist::ExceptionTargetLineNotExist()
 【开发者及日期】   张章 2024-7-21
 【更改记录】       24-8-5增加了注释
 *************************************************************************/
-Line3D::Line3D(Point3D& PointA, Point3D& PointB) : m_PointA(PointA), m_PointB(PointB){
+Line3D::Line3D(Point3D& PointA, Point3D& PointB) 
+    : m_PointA(PointA), m_PointB(PointB){
 }
 
 /*************************************************************************

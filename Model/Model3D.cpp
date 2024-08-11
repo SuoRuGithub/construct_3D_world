@@ -4,16 +4,16 @@
 【开发者及日期】            张章 2024-7-25
 【更改记录】                24-8-6增加了注释
 *************************************************************************/
-#include<algorithm>
-#include<limits>
-#include<sstream>
-#include<string>
-#include<fstream>
-#include<vector>
-#include"Model3D.hpp"
-#include"Point3D.hpp"
-#include"Line3D.hpp"
-#include"Face3D.hpp"
+#include<algorithm>     // std::find
+#include<limits>        // std::numeric_limits
+#include<sstream>       // std::istringstream
+#include<string>        // std::string
+#include<fstream>       // std::ifstream, std::ofstream
+#include<vector>        // std::vector
+#include"Model3D.hpp"   // Model3D类的声明
+#include"Point3D.hpp"   // Point3D类的声明
+#include"Line3D.hpp"    // Line3D类的声明
+#include"Face3D.hpp"    // Face3D类的声明
 
 // 点线面模型的指针
 using PointPtr = std::shared_ptr<Point3D>;
@@ -24,16 +24,53 @@ using ModelPtr = std::shared_ptr<Model3D>;
 // 支持的文件格式，在未来可以继续添加
 std::vector<std::string> SUPPORTED_FORMAT = {"obj"};
 
-/******************************异常类*************************************/
+/****************************异常类****************************************
+【类名】                    ExceptionFaceExist
+【功能模块和目的】          当检测到面已存在时抛出此异常，用于处理面创建或
+                            修改过程中的重复问题
+【接口说明】               继承自 std::invalid_argument，提供构造函数用于
+                           初始化异常信息
+【开发者及日期】          张章 2024-7-31
+【更改记录】                无
+*************************************************************************/
 ExceptionFaceExist::ExceptionFaceExist() 
     : std::invalid_argument("Face exist"){
 }
+
+/****************************异常类****************************************
+【类名】                    ExceptionInvalidImporterConfig
+【功能模块和目的】          当导入器配置无效时抛出此异常，用于处理模型导入过
+                            程中的配置错误问题
+【接口说明】               继承自 std::invalid_argument，提供构造函数用于初始
+                           化异常信息
+【开发者及日期】          张章 2024-7-31
+【更改记录】                无
+*************************************************************************/
 ExceptionInvalidImporterConfig::ExceptionInvalidImporterConfig()
     : std::invalid_argument("Invalid Importer configuration!"){
 }
+
+/****************************异常类****************************************
+【类名】                    ExceptionInvalidExporterConfig
+【功能模块和目的】          当导出器配置无效时抛出此异常，用于处理模型导出过
+                            程中的配置错误问题
+【接口说明】               继承自 std::invalid_argument，提供构造函数用于初
+                           始化异常信息
+【开发者及日期】          张章 2024-7-31
+【更改记录】                无
+*************************************************************************/
 ExceptionInvalidExporterConfig::ExceptionInvalidExporterConfig()
     : std::invalid_argument("Invalid Exporter configuration!"){
 }
+
+/****************************异常类****************************************
+【类名】                    ExceptionInvalidRendererConfig
+【功能模块和目的】          当渲染器配置无效时抛出此异常，用于处理渲染过程中的                             配置错误问题
+【接口说明】               继承自 std::invalid_argument，提供构造函数用于初
+                          始化异常信息
+【开发者及日期】          张章 2024-7-31
+【更改记录】                无
+*************************************************************************/
 ExceptionInvalidRendererConfig::ExceptionInvalidRendererConfig()
     : std::invalid_argument("Invalid Renderer configuration!"){
 }
@@ -44,39 +81,58 @@ ExceptionInvalidRendererConfig::ExceptionInvalidRendererConfig()
 
 /*************************************************************************
 【函数名称】       Importer
-【函数功能】       Importer类的含参构造函数和拷贝构造函数
-【参数】          【含参构造函数1】
-                      ModelPtr pmodel, string format, string fileName: 表示模型
-                      指针，模型格式，模型文件名
-                  【含参构造函数2】
-                      ImporterConfig& config: 表示对导入器的设置，该结构体包括
-                      模型指针，模型格式，模型文件名参数
-                  【含参构造函数3】
-                       ModelPtr pmodel: 模型指针
-                       std::string& fileName: 文件路径，文件的格式将由文件名获得
-                  【拷贝构造函数】
-                      Importer& AImporter: 表示希望被拷贝的导入器
+【函数功能】       使用模型指针、文件名和文件格式初始化导入器
+【参数】           ModelPtr pmodel: 输入参数，指向要导入的模型的智能指针
+【参数】           std::string& fileName: 输入参数，要导入的文件的路径
+【参数】           std::string format: 输入参数，要导入的文件的格式
 【返回值】         无
-【开发者及日期】   张章 2024-7-25
-【更改记录】       24-8-6增加了注释
+【开发者及日期】  张章 2024-7-31
+【更改记录】       无
 *************************************************************************/
 Importer::Importer(ModelPtr pmodel, std::string& fileName, std::string format){
     m_config.pmodel   = pmodel;
     m_config.fileName = fileName;
     m_config.format   = format;
 }
+/*************************************************************************
+【函数名称】       Importer
+【函数功能】       使用ImporterConfig对象初始化导入器
+【参数】           ImporterConfig& config: 输入参数，包含导入配置的对象
+【返回值】         无
+【开发者及日期】  张章 2024-7-31
+【更改记录】       无
+*************************************************************************/
 Importer::Importer(ImporterConfig& config)
                    : m_config {config}{
 }
+/*************************************************************************
+【函数名称】       Importer
+【函数功能】       使用模型指针和文件名初始化导入器，自动推断文件格式
+【参数】           ModelPtr pmodel: 输入参数，指向要导入的模型的智能指针
+【参数】           std::string& fileName: 输入参数，要导入的文件的路径
+【返回值】         无
+【开发者及日期】  张章 2024-7-31
+【更改记录】       无
+*************************************************************************/
 Importer::Importer(ModelPtr pmodel, std::string& fileName){
     m_config.pmodel   = pmodel;
     m_config.fileName = fileName;
     m_config.format   = FormatFromPath(fileName);
     
 }
+/*************************************************************************
+【函数名称】       Importer
+【函数功能】       拷贝构造函数，使用现有Importer对象的配置初始化新的Importer对
+                   象
+【参数】           Importer& AImporter: 输入参数，要复制的Importer对象
+【返回值】         无
+【开发者及日期】  张章 2024-7-31
+【更改记录】       无
+*************************************************************************/
 Importer::Importer(Importer& AImporter)
                    : m_config {AImporter.config}{
 }
+
 /*************************************************************************
 【函数名称】       operator=
 【函数功能】       Importer类的赋值运算符重载
@@ -130,7 +186,9 @@ bool Importer::IsConfigAvailable(){
         }
     }
     
-    if (std::find(SUPPORTED_FORMAT.begin(), SUPPORTED_FORMAT.end(), m_config.format) 
+    if (std::find(SUPPORTED_FORMAT.begin(), SUPPORTED_FORMAT.end(), 
+        m_config.format) 
+
         == SUPPORTED_FORMAT.end()){
         return false;
     }
@@ -214,7 +272,8 @@ void Importer::ImportobjModel(){
 【更改记录】       24-8-6增加了注释
 *************************************************************************/
 std::string Importer::FormatFromPath(std::string fileName){
-    // 目前的文件格式非常简单，只有obj，未来可能需要根据更加复杂的匹配规则得到文件的格式
+    // 目前的文件格式非常简单，只有obj，未来可能需要根据更加复杂的匹配规则
+    // 得到文件的格式
     return fileName = fileName.substr(fileName.length() - 3);
 }
 
@@ -302,8 +361,9 @@ bool Exporter::IsConfigAvailable(){
         return false;
     }
     
-    if (std::find(SUPPORTED_FORMAT.begin(), SUPPORTED_FORMAT.end(), m_config.format) 
-        == SUPPORTED_FORMAT.end()){
+    if (std::find(SUPPORTED_FORMAT.begin(), SUPPORTED_FORMAT.end(), 
+        m_config.format) == SUPPORTED_FORMAT.end()){
+
         return false;
     }
 
@@ -395,7 +455,8 @@ void Exporter::ExportAsobj(){
 【更改记录】       24-8-6增加了注释
 *************************************************************************/
 std::string Exporter::FormatFromPath(std::string fileName){
-    // 目前的文件格式非常简单，只有obj，未来可能需要根据更加复杂的匹配规则得到文件的格式
+    // 目前的文件格式非常简单，只有obj，未来可能需要根据更加复杂的匹配规则
+    // 得到文件的格式
     return fileName = fileName.substr(fileName.length() - 3);
 }
 
@@ -515,7 +576,8 @@ void Model3D::AddLine(double x1, double y1, double z1,
 【开发者及日期】   张章 2024-7-25
 【更改记录】       24-8-6增加了注释
 *************************************************************************/
-void Model3D::SetPointOfFace(int FaceIdx, PointPtr ptrPoint, double x, double y, double z){
+void Model3D::SetPointOfFace(int FaceIdx, PointPtr ptrPoint, 
+                             double x, double y, double z){
     if (FaceIdx < 0 || FaceIdx >= m_FacesList.size()){
         throw ExceptionIndexOutOfRange();
     }
@@ -524,7 +586,8 @@ void Model3D::SetPointOfFace(int FaceIdx, PointPtr ptrPoint, double x, double y,
         ptrFace->SetPoint(ptrPoint, x, y, z);
     }
 }
-void Model3D::SetPointOfFace(int FaceIdx, int PointIdx, double x, double y, double z){
+void Model3D::SetPointOfFace(int FaceIdx, int PointIdx, 
+                             double x, double y, double z){
     if (FaceIdx < 0 || FaceIdx >= m_FacesList.size()){
         throw ExceptionIndexOutOfRange();
     }
@@ -546,7 +609,8 @@ void Model3D::SetPointOfFace(int FaceIdx, int PointIdx, double x, double y, doub
 【开发者及日期】   张章 2024-7-25
 【更改记录】       24-8-6增加了注释
 *************************************************************************/
-void Model3D::SetPointOfLine(int LineIdx, PointPtr ptrPoint, double x, double y, double z){
+void Model3D::SetPointOfLine(int LineIdx, PointPtr ptrPoint, 
+                             double x, double y, double z){
     if (LineIdx < 0 || LineIdx >= m_LinesList.size()){
         throw ExceptionIndexOutOfRange();
     }
@@ -555,7 +619,8 @@ void Model3D::SetPointOfLine(int LineIdx, PointPtr ptrPoint, double x, double y,
         ptrLine->SetPoint(ptrPoint, x, y, z);
     }
 }
-void Model3D::SetPointOfLine(int LineIdx, int PointIdx, double x, double y, double z){
+void Model3D::SetPointOfLine(int LineIdx, int PointIdx, 
+                             double x, double y, double z){
     if (LineIdx < 0 || LineIdx >= m_LinesList.size()){
         throw ExceptionIndexOutOfRange();
     }
@@ -628,13 +693,17 @@ int Model3D::GetTotalPointsNum(){
 double Model3D::GetTotalFacesArea(){
     double TotalArea = 0.0;
     // 使用Lambda表达式
-    auto Accumulator = [&TotalArea](const Face3D& face){TotalArea += face.GetArea();};
+    auto Accumulator = 
+        [&TotalArea](const Face3D& face){TotalArea += face.GetArea();};
+
     std::for_each(m_FacesList.begin(), m_FacesList.end(), Accumulator);
     return TotalArea;
 }
 double Model3D::GetTotalLinesLength(){
     double TotalLength = 0.0;
-    auto Accumulator = [&TotalLength](const Line3D& line){TotalLength += line.GetLength();};
+    auto Accumulator = 
+        [&TotalLength](const Line3D& line){TotalLength += line.GetLength();};
+
     std::for_each(m_LinesList.begin(), m_LinesList.end(), Accumulator);
     return TotalLength;
 }

@@ -6,6 +6,7 @@
 class ControllerCLI : public ControllerBase{
 public:
     using ControllerBase::ControllerBase;   // 使用基类的构造函数
+    
     ~ControllerCLI();
 private:
 };

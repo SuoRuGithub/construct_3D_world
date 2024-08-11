@@ -5,7 +5,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/main.dir/Model/Line3D.cpp.o"
   "CMakeFiles/main.dir/Model/Model3D.cpp.o"
   "CMakeFiles/main.dir/Model/Point3D.cpp.o"
-  "CMakeFiles/main.dir/Model/Vector3D.cpp.o"
   "CMakeFiles/main.dir/View/View.cpp.o"
   "CMakeFiles/main.dir/main.cpp.o"
   "main"
